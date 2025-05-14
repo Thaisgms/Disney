@@ -14,6 +14,8 @@
     --color-white:#fff; 
     --color-blue-dark:#080e29; 
     --color-blue:#0cc0df; 
+    --color-verde-dark:#3d6137; 
+    --color-verde:#a3c07f; 
     --color-black: #000000; 
 }
 
@@ -22,7 +24,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-   background: var(--color-blue-dark);
+   background: var(--color-verde-dark);
 }
 
 ::-webkit-scrollbar-track {
@@ -75,13 +77,13 @@ body {
 }
 
 .nav-link a:hover {
-    color: var(--color-blue);
+    color: var(--color-verde);
 }
 
 .link-formulario {
-    border: 2px solid var(--color-blue);      
+    border: 2px solid var(--color-verde);      
     background-color: transparent;  
-    color: var(--color-blue);                 
+    color: var(--color-verde);                 
     padding: 8px 12px;
     border-radius: 25px;
     text-decoration: none;
@@ -95,12 +97,12 @@ body {
 }
 
 .link-formulario:hover {
-    background-color: var(--color-blue);
+    background-color: var(--color-verde);
     color: #080e29;
 }
 
 .link-formulario i {
-    background-color: var(--color-blue);
+    background-color: var(--color-verde);
     color: #080e29;
     border-radius: 50%;
     padding: 6px;
@@ -115,12 +117,12 @@ body {
 
 .link-formulario:hover i {
     background-color: #080e29;
-    color: var(--color-blue);
+    color: var(--color-verde);
 }
 
 
 .background {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.9)), url(../img/princesa-tiana.jpeg);   
+    background-image: linear-gradient(rgba(15, 13, 13, 0.9)), url(../img/princesa-tiana.jpeg);   
     height: 100vh;
     width: auto;
     background-repeat: no-repeat;
@@ -146,6 +148,7 @@ body {
 
 .inside-divtext p {
     font-size: 19px;
+    font-weight: 400;
 }
 
 .inside-divtext h2 {
@@ -155,7 +158,7 @@ body {
 }
 
 span {
-    color: #0ef;
+    color: var(--color-verde);
     font-weight: bold;
     font-size: 19px;
 }
@@ -178,6 +181,55 @@ span {
 }
 
 .bnt1 a {
-    color: #0ef;
+    color: var(--color-verde);
     padding: 25px 10px;
+}
+
+.recomendacoes {
+    color: var(--color-white);
+    background-color: var(--color-blue-dark);
+    height: 90vh;
+    width: auto;
+}
+
+.recomendacao {
+    display: flex;
+    height: 90%;
+    align-items: center;
+    flex-direction: column;
+}
+
+.recomendacao .txt-recomendacao h1{
+    text-align: center;
+    font-size: 36px;
+    margin-top: 5%;
+}
+
+.recomendacao .txt-recomendacao p{
+    text-align: center;
+    font-size: 16px;
+    margin-top: 2%;
+}
+
+.recomendacao .txt-recomendacao span {
+    text-align: center;
+    font-size: 36px;
+    margin-top: 5%;
+}
+
+.recomendacoes .cards-recomendacao {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   padding: 20px 0 50px 0;
+}
+
+
+.recomendacoes .card-recomendacao {
+    padding: 20px;
+    border-radius: 25px;
+    width: 35%;
+    border: 3px solid var(--color-verde-dark);    
+    margin: 20px;
+    height: 60%;
 }
