@@ -7,15 +7,17 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+
 body{
     background: #080e29;
-    background: linear-gradient(180deg,#080e29 0%, #0cc0df 95%);
+    background: linear-gradient(360deg,#0cc0df 0%, #080e29 95%);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     height: 100vh;
 }
+
 .header img {
     height: 80px;
     margin-top: -100px;

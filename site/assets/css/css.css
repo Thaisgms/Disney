@@ -48,6 +48,14 @@ body {
     color: var(--color-white);
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    margin-bottom: 100px;
+}
+
+.header.blur {
+  background-color: rgba(8, 14, 41, 0.7); 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: backdrop-filter 0.3s ease, background-color 0.3s ease;
 }
 
 .logo img {
