@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz de Interesse - Filmes da Disney</title>
+  <link rel="stylesheet" href="assets/css/css.css">
+</head>
+<body>
+  <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+  </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+  <div class="quiz-container">
+    <img src="assets/img/mydisney.png" alt="">
+    <h2>Descubra qual filme recomendo para você!</h2>
+    <div class="Progresso-container">
+      <div id="ProgressoBar" class="Progresso-bar"></div>
+    </div>
+    <div id="quiz"></div>
+    <button id="ProximaPergunta">Próxima</button>
+    <div id="resultado" class="resultado"></div>
+  </div>
+
+  <script>
+    // Variáveis e vetores
+    const quizData = [
+      { 
+    // Objetos
+    question: "Qual tipo de aventura você prefere?", 
+      options: [  { text: "Aventuras em um pântano ", value: 'tiana' },
+                  { text: "Explorar Oceanos e ilhas", value: 'moana'},
+                  { text: "Um universo de criaturas incríveis e cenários surpreendentes", value: 'alice' },
+                  { text: "Batalha em alto mar", value: 'piratas' },
+                  { text: "elementos da natureza - fogo, água, terra e ar ", value: 'elementos' },
+                  { text: "Corridas ambicioso", value: 'carros' },
+                  { text: "Celebração vibrante da diversidade cultural ", value: 'rio' } ] },
+
+      { question: "Qual estilo de filme você mais gosta?",
+      options: [  { text: "Romance", value: 'tiana' },
+                  { text: "Aventura", value: 'moana' },
+                  { text: "Fantasia", value: 'alice' }, 
+                  { text: "Ação", value: 'piratas' },
+                  { text: "Comédia romantica", value: 'elementos' },
+                  { text: "Animação", value: 'carros' },
+                  { text: "Comédia", value: 'rio' }, ] },
+
+      { question: "Qual ritmo de história você prefere?",
+      options: [  { text: "Diálogos cheios de emoção e evolução de um amor ao longo do tempo", value: 'tiana' },
+                  { text: "Sequências de ação e passeio constante", value: 'moana' },
+                  { text: "Mundo fantástico que evolui aos poucos", value: 'alice' }, 
+                  { text: "Piadas e perseguições intensas", value: 'piratas' }, 
+                  { text: "Caminhos que unem o humor e o amor", value: 'elementos' }, 
+                  { text: "Ação intensa do início ao fim", value: 'carros' }, 
+                  { text: "Peripécias inesperadas em cenários emocionantes", value: 'rio' } ] },
+
+      { question: "O que te faz voltar a assistir um filme?",
+      options: [  { text: "Diálogos cheios de emoção e evolução de um amor ao longo do tempo", value: 'tiana' },
+                  { text: "Sequências de ação e passeio constante", value: 'moana' },
+                  { text: "Mundo fantástico que evolui aos poucos", value: 'alice' }, 
+                  { text: "Piadas e perseguições intensas", value: 'piratas' }, 
+                  { text: "Caminhos que unem o humor e o amor", value: 'elementos' }, 
+                  { text: "Ação intensa do início ao fim", value: 'carros' }, 
+                  { text: "Peripécias inesperadas em cenários emocionantes", value: 'rio' } ] },
+                  
+      { question: "Você prefere tramas que:",
+      options: [  { text: "Diálogos cheios de emoção e evolução de um amor ao longo do tempo", value: 'tiana' },
+                  { text: "Sequências de ação e passeio constante", value: 'moana' },
+                  { text: "Mundo fantástico que evolui aos poucos", value: 'alice' }, 
+                  { text: "Piadas e perseguições intensas", value: 'piratas' }, 
+                  { text: "Caminhos que unem o humor e o amor", value: 'elementos' }, 
+                  { text: "Ação intensa do início ao fim", value: 'carros' }, 
+                  { text: "Peripécias inesperadas em cenários emocionantes", value: 'rio' } ] }
+    ];
+
+    let PerguntaMostrada = 0;
+    //objeto que guarda a pontuação acumulada para cada filme
+    const scores = { tiana: 0, moana: 0, alice: 0, piratas: 0, elementos: 0, carros: 0, rio: 0 };
+    // referências aos elementos do HTML para manipulação
+    const quizEl = document.getElementById('quiz');
+    const ProximaPergunta = document.getElementById('ProximaPergunta');
+    const resultadoEl = document.getElementById('resultado');
+    const ProgressoBar = document.getElementById('ProgressoBar');
+
+    // Função para carregar a pergunta atual
+    function loadQuestion(index) {
+      const questionObj = quizData[index];
+      let html = `<div class="question">${questionObj.question}</div><ul class="options">`;
+
+      // Loop para gerar opções
+      for (let i = 0; i < questionObj.options.length; i++) {
+        const opt = questionObj.options[i];
+        html += `<li><label><input type="radio" name="option" value="${opt.value}"> ${opt.text}</label></li>`;
+      }
+
+      // Atualiza o texto do botão: se for a última pergunta, muda para "Finalizar"
+      html += '</ul>';
+      quizEl.innerHTML = html;
+      ProximaPergunta.textContent = (index === quizData.length - 1) ? 'Finalizar' : 'Próxima';
+      updateProgresso();
+    }
+
+    // Função para atualizar barra de Progressoo
+    function updateProgresso() {
+      const percent = ((PerguntaMostrada) / quizData.length) * 100;
+      ProgressoBar.style.width = `${percent}%`;
+    }
+
+    // Função para processar resposta e avançar
+    function handleNext() {
+      const selecionada  = document.querySelector('input[name="option"]:checked');
+      // Condicional
+      if (!selecionada ) {
+         alert('Você ainda não selecionou nenhuma opção! Por favor, selecione uma para prosseguir.'); return; 
+      }
+      scores[selecionada .value]++; //Se selecionou, aumenta a pontuação da categoria correspondente.
+      PerguntaMostrada++; // Incrementa o índice para ir para a próxima pergunta.
+      if (PerguntaMostrada < quizData.length) {
+        loadQuestion(PerguntaMostrada); //Se ainda há perguntas, carrega a próxima.
+      } else {
+        showresultado(); //Caso contrário, chama a função para mostrar o resultado.
+      }
+    }
+
+    // Função para mostrar o resultadoado final
+    function showresultado() {
+      ProgressoBar.style.width = `100%`; //Completa a barra de progresso.
+      ProximaPergunta.style.display = 'none'; //Esconde o botão "Próxima".
+      let maxScore = -1, theme = '';
+
+      for (const key in scores) { //Percorre o objeto scores para descobrir qual categoria tem maior pontuação.
+          if (scores[key] > maxScore) { maxScore = scores[key]; theme = key; }
+      }
+
+      // Redirecionar para páginas de resultadoado (Condicional)
+      switch(theme) {
+        case 'tiana':
+          window.location.href = '../../tiana.html';
+          break;
+        case 'moana':
+          window.location.href = 'moana.html';
+          break;
+        case 'alice':
+          window.location.href = 'alice.html';
+          break;
+        case 'piratas':
+          window.location.href = 'piratas.html';
+          break;
+        case 'elementos':
+          window.location.href = 'elementos.html';
+          break;
+        case 'carros':
+          window.location.href = 'carros.html';
+          break;
+        case 'rio':
+          window.location.href = 'rio.html';
+          break;
+        default:
+          window.location.href = 'index.html';
+      }
+    }
+
+    // Evento de clique
+    ProximaPergunta.addEventListener('click', handleNext);
+
+    // Inicialização
+    loadQuestion(PerguntaMostrada);
+  </script>
+</body>
+</html>

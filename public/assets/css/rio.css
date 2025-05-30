@@ -1,0 +1,472 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root{
+    --color-white:#fff; 
+    --color-blue-dark:#080e29; 
+    --color-blue:#FFFF00; 
+    --color-verde-dark:#1E90FF; 
+    --color-verde:#00BFFF; 
+    --color-black: #000000; 
+}
+
+::-webkit-scrollbar {
+   width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+   background: var(--color-verde-dark);
+}
+
+::-webkit-scrollbar-track {
+   background-color: var(--color-blue-dark);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-blue-dark);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 50px;
+    color: var(--color-white);
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.018);
+    margin-bottom: 100px;
+}
+
+.header.blur {
+  background-color: rgba(8, 14, 41, 0.7); 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: backdrop-filter 0.3s ease, background-color 0.3s ease;
+}
+
+
+.logo img {
+    height: 55px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.nav-link a:hover {
+    color: var(--color-verde);
+}
+
+.nav-link .ativo {
+  color: var(--color-verde);
+}
+
+.link-formulario {
+    border: 2px solid var(--color-verde);      
+    background-color: transparent;  
+    color: var(--color-verde);                 
+    padding: 8px 12px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.4s ease;
+}
+
+.link-formulario:hover {
+    background-color: var(--color-verde);
+    color: #080e29;
+}
+
+.link-formulario i {
+    background-color: var(--color-verde);
+    color: #080e29;
+    border-radius: 50%;
+    padding: 6px;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.link-formulario:hover i {
+    background-color: #080e29;
+    color: var(--color-verde);
+}
+
+
+.background {
+    background-image: linear-gradient(rgba(15, 13, 13, 0.9)), url(../img/fundofundo-rio.jpg);   
+    height: 100vh;
+    width: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.divtext  {
+    position: absolute;
+    color: #fff;
+    margin-top: 280px;
+    margin-left: 130px;
+    margin-right: 780px;
+    text-align: justify;
+}
+
+.inside-divtext {
+    line-height: 1.5;
+}
+
+.inside-divtext h1 {
+    font-size: 36px;
+}
+
+.inside-divtext p {
+    font-size: 19px;
+    font-weight: 400;
+}
+
+.inside-divtext h2 {
+    margin-top: 2%;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+span {
+    color: var(--color-verde);
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.background .poster {
+    justify-self: flex-end;
+    align-items: center;
+    padding: 8%;
+    margin-top: 2%;
+}
+
+.poster img {
+    width: 560px;
+    height: 500px;
+    border-radius: 20px;
+}
+
+.bnt1 {
+    margin-top: 10px;
+}
+
+.bnt1 a {
+    color: var(--color-verde);
+    padding: 25px 10px;
+}
+
+.recomendacoes {
+    color: var(--color-white);
+    background-color: var(--color-blue-dark);
+    height: 100vh;
+    width: auto;
+}
+
+.recomendacao {
+    display: flex;
+    height: 90%;
+    align-items: center;
+    flex-direction: column;
+}
+
+.recomendacao .txt-recomendacao h1{
+    text-align: center;
+    font-size: 36px;
+    margin-top: 4%;
+}
+
+.recomendacao .txt-recomendacao p{
+    text-align: center;
+    font-size: 16px;
+    margin-top: 1%;
+}
+
+.recomendacao .txt-recomendacao span {
+    text-align: center;
+    font-size: 36px;
+    margin-top: 5%;
+}
+
+.cards-recomendacao {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 20px;
+  max-width: 3200px;
+  margin: 0 auto;
+  gap: 80px; 
+}
+
+.cards-img {
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 50px; 
+}
+
+.cards-img img {
+  width: 100%;
+  height: auto;
+  max-width: 600px; 
+  border-radius: 20px;
+}
+
+
+.cards-coluna {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 700px;
+}
+
+.card-recomendacao {
+  background-color: var(--color-blue-dark);
+  color: var(--color-white);
+  border: 3px solid var(--color-verde-dark);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: justify;
+  height: 150px;
+
+}
+
+.card-recomendacao i {
+  font-size: 30px;
+  color: var(--color-verde);
+  margin-bottom: 10px;
+}
+
+.card-recomendacao h2 {
+  font-size: 18px;
+  color: var(--color-verde);
+  margin-bottom: 10px;
+}
+
+.card-recomendacao p {
+  font-size: 14px;
+  text-align: justify;
+}
+
+.card-recomendacao:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 0 20px var(--color-verde);
+}
+
+.recomendacoes .card-recomendacao h2 {
+    font-size: 12px;
+}
+
+.recomendacoes .card-recomendacao p {
+    font-size: 10px;
+}
+
+.accordions {
+    background-color: var(--color-blue-dark);
+}
+
+.accordions .titulo-accordion h2{
+   color: var(--color-white);
+   font-weight: 800;
+   font-size: 36px;
+   text-align: center;
+   align-items: center;
+}
+
+.accordions .titulo-accordion span{
+   color: var(--color-verde);
+   font-weight: 800;
+   font-size: 36px;
+   text-align: center;
+   align-items: center;
+}
+
+.container {
+   margin-top: 20px;
+   margin-left: 9%;
+   display: flex;
+   flex-direction: column;
+   gap: 8px;
+   width: 83%;
+}
+
+.accordion {
+  background: rgba(255, 255, 255, 0.074);
+  padding: 16px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.accordion:hover {
+  background: rgba(255, 255, 255, 0.174);
+}
+
+.accordion-header {
+   width: 100%;
+   border: none;
+   background-color: transparent;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   font-size: 32px;
+   font-weight: 700;
+   cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.accordion-header i {
+  color: var(--color-verde);
+  font-size: 28px;
+  transition: transform 0.4s ease;
+}
+
+.accordion-header span {
+   max-width: 100%;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   color: var(--color-white);
+}
+
+.accordion-body {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-white);
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
+  opacity: 0;
+  transition: max-height 0.4s ease, padding 0.3s ease, opacity 0.3s ease;
+}
+
+.accordion-body.active {
+  opacity: 1;
+  max-height: 300px; 
+  padding: 10px 0;
+}
+
+.arrow {
+   transition: transform .4s linear;
+}
+
+.accordion:has(.active) .arrow {
+   transform: rotate(90deg);
+}
+
+.personagens {
+  background-color: var(--color-blue-dark);
+  color: var(--color-white);
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.titulo-personagens h2,
+.titulo-personagens span {
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.titulo-personagens span {
+  color: var(--color-verde);
+}
+
+.cards-personagens {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.card-personagem {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 2px solid var(--color-verde-dark);
+  border-radius: 15px;
+  width: 270px;
+  height: 340px;
+  text-align: justify;
+  position: relative; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-personagem img {
+  border-radius: 15px;
+  margin: 0;
+  top: 0;
+  width: 100%;
+  height: 50%;
+  object-fit: cover; 
+  z-index: 0; 
+}
+
+.card-personagem h3 {
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  text-align: center;
+  font-size: 18px;
+  background-color: var(--color-verde-dark);
+  color: var(--color-white);
+  border: 1px solid white;
+  border-radius: 15px;
+  padding: 5px 15px;  
+  z-index: 1;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+}
+
+.card-personagem p {
+  margin-top: 30px; 
+  font-size: 14px; 
+  padding: 0 20px; 
+  text-align: justify;
+}
+

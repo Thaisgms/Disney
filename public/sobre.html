@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="assets/css/sobre.css">
+    <title>Document</title>
+</head>
+<body>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    
+    <div class="header">
+        <div class="logo">
+            <img src="assets/img/logodisney.png" alt="">
+        </div>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li class="nav-link"><a href="index.html" role="button"> <p>Inicio</p></a></li>
+                <li class="nav-link"><a href="sobre.html" class="ativo" role="button"><p>Sobre</p></a></li>
+                <li class="nav-link"><a href="tiana.html" role="button"><p>Projeto</p></a></li>
+            </ul>
+            <a  class="link-formulario" id="link-formulario" href="../site/tela cadastro/index.html" role="button" >Entre ou Cadastre-se<i class='bx bxs-user'></i></a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="apresentacao-container">
+            <div class="txt-container">
+                <h1>Sobre mim</h1>
+                <p>A <span>The Walt Disney Company</span> , fundada em 1923 por Walt e Roy Disney, começou como um pequeno estúdio de animação e se transformou em uma gigante global do entretenimento, atuando em áreas como cinema, TV, parques temáticos, produtos licenciados e streaming. Para mim, a Disney marcou a infância de forma especial: era uma forma de diversão e conexão com minha mãe, que começou assistindo aos desenhos comigo e acabou se encantando também. Mais do que entretenimento, a Disney foi parte importante do nosso vínculo e das memórias que construímos, não só com ela, mas com toda a minha família.</p>
+            </div>
+            <div class="img-container">
+            <img src="assets/img/capa-tiana.jpeg" alt="">
+            </div>
+        </div>
+        <ul class="timeline">
+            <li><div class="timeline-container">
+                <img src="assets/img/capa-tiana.jpeg" alt="">
+                <h2>A Princesa e o Sapo</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut in rerum ratione consectetur repellendus, incidunt, sed expedita eligendi officia atque totam eveniet aperiam! Doloremque quos voluptate voluptates, molestiae porro laboriosam.</p>
+            </div></li>
+            <li><div class="timeline-container">
+                <img src="assets/img/moana.jpeg" alt="">
+                <h2>Moana</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut in rerum ratione consectetur repellendus, incidunt, sed expedita eligendi officia atque totam eveniet aperiam! Doloremque quos voluptate voluptates, molestiae porro laboriosam.</p>
+            </div></li>
+            <li><div class="timeline-container">
+                <img src="assets/img/alice.jpg" alt="">
+                <h2>Alice no País das Maravilhas</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut in rerum ratione consectetur repellendus, incidunt, sed expedita eligendi officia atque totam eveniet aperiam! Doloremque quos voluptate voluptates, molestiae porro laboriosam.</p>
+            </div></li>
+            <li><div class="timeline-container">
+                <img src="assets/img/piratasdocaribe.jpg" alt="">
+                <h2>Piratas do Caribe</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut in rerum ratione consectetur repellendus, incidunt, sed expedita eligendi officia atque totam eveniet aperiam! Doloremque quos voluptate voluptates, molestiae porro laboriosam.</p>
+            </div></li>
+            <li><div class="timeline-container">
+                <img src="assets/img/rio.JPG" alt="">
+                <h2>Rio</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut in rerum ratione consectetur repellendus, incidunt, sed expedita eligendi officia atque totam eveniet aperiam! Doloremque quos voluptate voluptates, molestiae porro laboriosam.</p>
+            </div></li>
+            <li><div class="timeline-container">
+                <img src="assets/img/elementos.jpeg" alt="">
+                <h2>Elementos</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut in rerum ratione consectetur repellendus, incidunt, sed expedita eligendi officia atque totam eveniet aperiam! Doloremque quos voluptate voluptates, molestiae porro laboriosam.</p>
+            </div></li>
+            <li><div class="timeline-container">
+                <img src="assets/img/carros.jpeg" alt="">
+                <h2>carros</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut in rerum ratione consectetur repellendus, incidunt, sed expedita eligendi officia atque totam eveniet aperiam! Doloremque quos voluptate voluptates, molestiae porro laboriosam.</p>
+            </div></li>
+        </ul>
+    </div>
+
+<script>
+  const header = document.querySelector('.header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+      header.classList.add('blur');
+    } else {
+      header.classList.remove('blur');
+    }
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target); // Para animar só uma vez, remova essa linha se quiser repetir.
+      }
+    });
+  }, { threshold: 0.2 });
+
+  const timelineItems = document.querySelectorAll('.timeline li');
+
+  timelineItems.forEach(item => {
+    item.classList.add('hidden');  // Esconde inicialmente
+    observer.observe(item);
+  });
+</script>
+</body>
+</html>

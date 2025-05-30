@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="assets/css/css.css">
+    <title>DISNEY+</title>
+</head>
+<body>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    
+    <div class="header">
+        <div class="logo">
+            <img src="assets/img/logodisney.png" alt="">
+        </div>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li class="nav-link"><a href="index.html" class="ativo" role="button"> <p>Inicio</p></a></li>
+                <li class="nav-link"><a href="sobre.html" role="button"><p>Sobre</p></a></li>
+                <li class="nav-link"><a href="tiana.html" role="button"><p>Projeto</p></a></li>
+            </ul>
+            <a  class="link-formulario" id="link-formulario" href="./tela cadastro/index.html" role="button" >Entre ou Cadastre-se<i class='bx bxs-user'></i></a>
+        </nav>
+    </div>
+
+    <div class="apresentacao">
+        <div class="apresentacao-content">
+            <h3>Seja muito bem vindo à </h3>
+            <h1>DISNEY +</h1>
+            <h3>Apresentado por <span class="multiple-text"></span></h3>
+            <p>As melhores histórias em um só lugar.</p>
+                <div class="social-media">
+                 <a href="#"><i class='bx bxl-facebook'></i></a>
+                 <a href="#"><i class='bx bxl-twitter'></i></a>
+                 <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                 <a href="#"><i class='bx bxl-linkedin'></i></a>
+                </div>
+            <a href="index2.html" class="btn">Conhecer</a>
+        </div>
+
+    </div>
+
+
+    
+</body>
+<script>
+  const header = document.querySelector('.header');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+      header.classList.add('blur');
+    } else {
+      header.classList.remove('blur');
+    }
+  });
+</script>
+<script src="assets/js/script.js"></script>
+</html>
