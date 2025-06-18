@@ -27,7 +27,7 @@ body {
 }
 
 .quiz-container {
-    max-width: 600px; 
+    width: 550px; 
     margin: auto; 
     background: #fff; 
     padding: 20px; 
@@ -76,19 +76,22 @@ button {
     color: var(--color-blue-dark);                 
     padding: 8px 12px;
     border-radius: 25px;
-    font-weight: 500;
-    font-size: 14px;
-    margin-top: 15px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    transition: all 0.4s ease; 
+    gap: 10px;
+    margin-top: 5px;
+    box-shadow: 0 4px 10px rgba(0, 192, 223, 0.3);
+    transition: all 0.4s ease;
 }
 
 button:hover { 
     background-color: var(--color-blue);
-    border: 2px solid var(--color-blue);      
     color: #080e29;
+    box-shadow: 0 0px 20px var(--color-blue);
 }
     
 .Progresso-container {
@@ -105,6 +108,6 @@ button:hover {
 .Progresso-bar {
     height: 100%;     
     width: 0%;
-    background: linear-gradient(90deg,#080e29 0%, #0cc0df 95%);
+    background: var(--color-blue);
     transition: width 0.3s;
 }

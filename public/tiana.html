@@ -1,193 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="assets/css/tiana.css">
-    <title>DISNEY+</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="assets/css/tiana.css">
+  <title>FILME - Tiana</title>
 </head>
+
 <body>
-    <div vw class="enabled">
-        <div vw-access-button class="active"></div>
-        <div vw-plugin-wrapper>
-            <div class="vw-plugin-top-wrapper"></div>
-        </div>
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
     </div>
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+
+  <div class="header">
+    <div class="logo">
+      <img src="assets/img/logodisney.png" alt="">
+    </div>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li class="nav-link"><a href="index.html" class="ativo" role="button">
+            <p>Sair da conta</p>
+          </a></li>
+      </ul>
+      <a class="link-formulario" id="link-formulario" href="./dashboard/quiz/quiz.html" role="button">Refazer Quiz <i
+          class='bx  bx-rotate-ccw'></i></a>
+    </nav>
+  </div>
+
+  <div class="apresentacao">
+    <div class="background">
+      <div class="divtext">
+        <div class="inside-divtext">
+          <span>Direção: Ron Clements, John Musker</span>
+          <h1>A Princesa e o Sapo</h1>
+          <p>11 de dez. de 2009 · 1h 37min · Animação, Comédia Musical</p>
+          <h2>A Princesa e o Sapo é um filme da Disney que conta a história de Tiana,
+            uma jovem sonhadora que vira sapo ao beijar um príncipe enfeitiçado.
+            Juntos, eles vivem uma aventura mágica em busca de uma forma de voltar a ser humanos,
+            aprendendo sobre amor, amizade e sonhos ao longo do caminho.</h2>
+          <div class="bnt1">
+            <a href=""><i class="fas fa-play"></i></a>
+            <a href=""><i class="fas fa-heart"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="poster">
+        <img src="assets/img/capa-tiana.jpeg">
+      </div>
+    </div>
+  </div>
+
+  <div class="recomendacoes">
+    <div class="recomendacao">
+      <div class="txt-recomendacao">
+        <h1>Por que <span>A Princesa e o Sapo</span> é um filme que você precisa ver?</h1>
+        <center>
+          <p>Muito mais que um desenho: uma lição sobre sonhos, esforço e diversidade.</p>
+        </center>
+      </div>
+
+      <div class="cards-recomendacao">
+        <div class="cards-img">
+          <img src="assets/img/teste_tiana-removebg-preview.png" alt="">
+        </div>
+
+        <div class="cards-coluna">
+          <div class="card-recomendacao">
+            <h2>Para quem quer se emocionar com um filme que inspira de verdade</h2>
+            <p>Se você está cansado de histórias previsíveis, Tiana traz uma jornada emocionante e autêntica, repleta de
+              coragem, superação e lições valiosas que vão tocar profundamente seu coração e inspirar você a lutar pelos
+              seus próprios sonhos.</p>
+          </div>
+          <div class="card-recomendacao">
+            <h2>Para quem acredita que diversidade importa de verdade</h2>
+            <p>Assistir Tiana é muito mais do que entretenimento, é celebrar a representatividade que todos merecem ver
+              nas telas, reconhecendo a importância de personagens que refletem a pluralidade do mundo e fortalecem a
+              autoestima de crianças e adultos.</p>
+          </div>
+          <div class="card-recomendacao">
+            <h2>Para quem valoriza sonhos reais e exemplos fortes</h2>
+            <p>A história apresenta uma protagonista que mostra que, com trabalho duro, determinação e paixão
+              verdadeira, é possível transformar sonhos reais em conquistas palpáveis, servindo de exemplo para todos
+              que acreditam no poder do esforço pessoal.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordions">
+      <div class="titulo-accordion">
+        <br>
+        <h2>Curiosidades sobre o <span>filme</span></h2>
+      </div>
+      <div class="container">
+        <div class="accordion">
+          <button class="accordion-header">
+            <span>A Primeira princesa negra da Disney</span>
+            <i class='bx bx-plus-medical arrow'></i>
+          </button>
+          <div class="accordion-body">
+            <p>Tiana é a primeira princesa negra da história da Disney, o que foi um marco importantíssimo para a
+              representatividade nos desenhos animados. Ela quebrou padrões e trouxe diversidade ao grupo das princesas,
+              inspirando meninas do mundo todo.</p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="accordion">
+          <button class="accordion-header">
+            <span>Uma princesa com um sonho realista</span>
+            <i class='bx bx-plus-medical arrow'></i>
+          </button>
+          <div class="accordion-body">
+            <p>Tiana não sonha com um príncipe ou castelo. Ela quer abrir seu próprio restaurante, um objetivo real,
+              baseado em trabalho duro, esforço e paixão pela culinária. Isso torna a personagem mais próxima da
+              realidade e muito inspiradora.</p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="accordion">
+          <button class="accordion-header">
+            <span>Uma história de amor construída com base no respeito</span>
+            <i class='bx bx-plus-medical arrow'></i>
+          </button>
+          <div class="accordion-body">
+            <p>Diferente de muitos contos de fadas onde o amor acontece "à primeira vista", Tiana e Naveen aprendem um
+              com o outro, amadurecem juntos e <br> constroem um relacionamento verdadeiro ao longo da jornada.</p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="accordion">
+          <button class="accordion-header">
+            <span>Ambientado em Nova Orleans, com muito jazz!</span>
+            <i class='bx bx-plus-medical arrow'></i>
+          </button>
+          <div class="accordion-body">
+            <p>O filme se passa em Nova Orleans nos anos 1920, uma época vibrante em que o jazz estava em alta. A trilha
+              sonora é contagiante, cheia de ritmos <br>típicos da cultura local como jazz, blues e zydeco, tornando o
+              clima do filme totalmente envolvente e diferente de outros contos de fadas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="personagens">
+      <div class="titulo-personagens">
+        <h2>Conheça os <span>Personagens</span></h2>
+        <p>Os encantadores personagens que dão vida à história de Tiana e sua jornada.</p>
+      </div>
+
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="assets/img/perso-tiana01.jpg" alt="">
+            <h3>Princesa Tiana</h3>
+            <p>A protagonista determinada que sonha em abrir seu próprio restaurante e acaba vivendo uma aventura
+              mágica.
+            </p>
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/img/perso-tiana02.jpg" alt="">
+            <h3>Príncipe Naveen</h3>
+            <p>Um príncipe carismático que aprende sobre responsabilidade e amor verdadeiro ao lado de Tiana.</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/img/perso-tiana03.jpg" alt="">
+            <h3>Louis</h3>
+            <p>Um jacaré adorável que ama jazz e sonha em tocar trompete em uma banda humana.</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/img/perso-tiana04.jpg" alt="">
+            <h3>Ray</h3>
+            <p>Um vagalume romântico e fiel que ajuda Tiana em sua jornada com muito coração e luz.</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/img/perso-tiana05.jpg" alt="">
+            <h3>Dr. Facilier</h3>
+            <p>O vilão do filme, também conhecido como o "Homem da Sombra". É um feiticeiro vudu que faz acordos
+              traiçoeiros com ajuda de espíritos sombrios.</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/img/perso-tiana06.jpg" alt="">
+            <h3>Charlotte LaBouff</h3>
+            <p>A melhor amiga de infância de Tiana, rica e extravagante, sonha em se casar com um príncipe.</p>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+
+    <div class="feedback">
+      <h1>Gostaría de saber o que <span>você achou</span> da recomendação:</h1>
+      <a onclick="gostei(sessionStorage.ID_FILME)" class="link-gostei" role="button">Gostei <i class='bx  bx-heart'></i>
+      </a>
+    </div>
+
+    <div class="rodape">
+      <div class="logo-rodape">
+        <img src="assets/img/logodisney.png" alt="">
+      </div>
+      <div class="menu-rodape">
+        <center>
+          <ul class="links-rodape">
+            <li class="link-rodape"><a href="index.html" class="ativo" role="button">
+                <p>Sair da Conta</p>
+              </a></li>
+            <li class="link-rodape"><a href="./dashboard/quiz/quiz.html" class="ativo" role="button">
+                <p>Refazer Quiz</p>
+              </a></li>
+          </ul>
+        </center>
+        <div class="social-media">
+          <a href="https://github.com/Thaisgms"><i class='bx bxl-github'></i></a>
+          <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+          <a href="#"><i class='bx bxl-linkedin'></i></a>
+        </div>
+      </div>
+    </div>
+
     <script>
-        new window.VLibras.Widget('https://vlibras.gov.br/app');
+      const header = document.querySelector('.header');
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 10) {
+          header.classList.add('blur');
+        } else {
+          header.classList.remove('blur');
+        }
+      });
     </script>
-
-    <div class="header">
-        <div class="logo">
-            <img src="assets/img/logodisney.png" alt="">
-        </div>
-        <nav class="navbar">
-            <ul class="nav-links">
-                <li class="nav-link"><a href="index.html" role="button"><p>Inicio</p></a></li>
-                <li class="nav-link"><a href="sobre.html" role="button"><p>Sobre</p></a></li>
-                <li class="nav-link"><a href="tiana.html" class="ativo" role="button"><p>Projeto</p></a></li>
-            </ul>
-            <a  class="link-formulario" id="link-formulario" href="tela cadastro/index.html" role="button" >MyDisney<i class='bx bxs-user'></i></a>
-        </nav>
-    </div>
-    
-    <div class="apresentacao">
-        <div class="background">
-            <div class="divtext">
-                <div class="inside-divtext">
-                    <span>Direção: Ron Clements, John Musker</span>
-                    <h1>A Princesa e o Sapo</h1>
-                    <p>11 de dez. de 2009 · 1h 37min · Animação, Comédia Musical</p>
-                    <h2>A Princesa e o Sapo é um filme da Disney que conta a história de Tiana, 
-                        uma jovem sonhadora que vira sapo ao beijar um príncipe enfeitiçado.
-                        Juntos, eles vivem uma aventura mágica em busca de uma forma de voltar a ser humanos,
-                        aprendendo sobre amor, amizade e sonhos ao longo do caminho.</h2>
-                    <div class="bnt1">
-                        <a href=""><i class="fas fa-play"></i></a>
-                        <a href=""><i class="fas fa-heart"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="poster">
-                <img src="assets/img/capa-tiana.jpeg">
-            </div>
-        </div>
-    </div>
-
-<div class="recomendacoes">
-  <div class="recomendacao">
-    <div class="txt-recomendacao">
-      <h1>curiosidades sobre a <span>história</span></h1>
-      <center>
-        <p>Uma história mágica cheia de curiosidades e inspiração.</p>
-      </center>
-    </div>
-
-    <div class="cards-recomendacao">
-      <div class="cards-img">
-        <img src="assets/img/teste_tiana-removebg-preview.png" alt="">
-      </div>
-
-      <div class="cards-coluna">
-        <div class="card-recomendacao">
-          <i class='bxr bx-sparkles-alt'></i>
-          <h2>A Primeira princesa negra da Disney</h2>
-          <p>Tiana é a primeira princesa negra da história da Disney, o que foi um marco importantíssimo para a representatividade nos desenhos animados. Ela quebrou padrões e trouxe diversidade ao grupo das princesas, inspirando meninas do mundo todo.</p>
-        </div>
-        <div class="card-recomendacao">
-          <i class='bxr bx-sparkles-alt'></i>
-          <h2>Uma princesa com um sonho realista</h2>
-          <p>Tiana não sonha com um príncipe ou castelo. Ela quer abrir seu próprio restaurante, um objetivo real, baseado em trabalho duro, esforço e paixão pela culinária. Isso torna a personagem mais próxima da realidade e muito inspiradora.</p>
-        </div>
-        <div class="card-recomendacao">
-          <i class='bxr bx-sparkles-alt'></i>
-          <h2>Uma história de amor construída com base no respeito</h2>
-          <p>Diferente de muitos contos de fadas onde o amor acontece "à primeira vista", Tiana e Naveen aprendem um com o outro, amadurecem juntos e constroem um relacionamento verdadeiro ao longo da jornada.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="accordions">
-    <div class="titulo-accordion">
-      <br><h2>Curiosidades sobre a <span>história</span></h2>
-    </div>
-    <div class="container">
-        <div class="accordion">
-            <button class="accordion-header">
-                <span>A Primeira princesa negra da Disney</span>
-                <i class='bx bx-plus-medical arrow'></i>
-            </button>
-            <div class="accordion-body">
-                <p>Tiana é a primeira princesa negra da história da Disney, o que foi um marco importantíssimo para a representatividade nos desenhos animados. Ela quebrou padrões e trouxe diversidade ao grupo das princesas, inspirando meninas do mundo todo.</p>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="accordion">
-            <button class="accordion-header">
-                <span>Uma princesa com um sonho realista</span>
-                <i class='bx bx-plus-medical arrow'></i>
-            </button>
-            <div class="accordion-body">
-                <p>Tiana não sonha com um príncipe ou castelo. Ela quer abrir seu próprio restaurante, um objetivo real, baseado em trabalho duro, esforço e paixão pela culinária. Isso torna a personagem mais próxima da realidade e muito inspiradora.</p>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="accordion">
-            <button class="accordion-header">
-                <span>Uma história de amor construída com base no respeito</span>
-                <i class='bx bx-plus-medical arrow'></i>
-            </button>
-            <div class="accordion-body">
-              <p>Diferente de muitos contos de fadas onde o amor acontece "à primeira vista", Tiana e Naveen aprendem um com o outro, amadurecem juntos e <br> constroem um relacionamento verdadeiro ao longo da jornada.</p>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="accordion">
-            <button class="accordion-header">
-                <span>Ambientado em Nova Orleans, com muito jazz!</span>
-                <i class='bx bx-plus-medical arrow'></i>
-            </button>
-            <div class="accordion-body">
-              <p>O filme se passa em Nova Orleans nos anos 1920, uma época vibrante em que o jazz estava em alta. A trilha sonora é contagiante, cheia de ritmos <br>típicos  da cultura local como jazz, blues e zydeco, tornando o clima do filme totalmente envolvente e diferente de outros contos de fadas.</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="personagens">
-  <div class="titulo-personagens">
-    <h2>Conheça os <span>Personagens</span></h2>
-    <p>Os encantadores personagens que dão vida à história de Tiana e sua jornada.</p>
-  </div>
-  <div class="cards-personagens">
-    <div class="card-personagem">
-        <img src="assets/img/personagem-tiana.jpeg" alt="">
-        <h3>Tiana</h3>
-        <p>A protagonista determinada que sonha em abrir seu próprio restaurante e acaba vivendo uma aventura mágica.</p>
-    </div>
-    <div class="card-personagem">
-        <img src="assets/img/personagem-Naveen.jpeg" alt="">
-        <h3>Naveen</h3>
-        <p>Um príncipe carismático que aprende sobre responsabilidade e amor verdadeiro ao lado de Tiana.</p>
-    </div>
-    <div class="card-personagem">
-        <img src="assets/img/personagem-Dr. Facilier.jpeg" alt="">
-        <h3>Dr. Facilier</h3>
-        <p>O vilão da história, um feiticeiro sombrio conhecido como o "Homem das Sombras".</p>
-    </div>
-    <div class="card-personagem">
-        <img src="assets/img/personagem-Louis.jpeg" alt="">
-        <h3>Louis</h3>
-        <p>Um jacaré adorável que ama jazz e sonha em tocar trompete em uma banda humana.</p>
-    </div>
-    <div class="card-personagem">
-        <img src="assets/img/personagem-Ray.jpeg" alt="">
-        <h3>Ray</h3>
-        <p>Um vagalume romântico e fiel que ajuda Tiana em sua jornada com muito coração e luz.</p>
-    </div>
-  </div>
-</div>
-
-
-
-
-<script>
-  const header = document.querySelector('.header');
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 10) {
-      header.classList.add('blur');
-    } else {
-      header.classList.remove('blur');
-    }
-  });
-</script>
-<script src="assets/js/js.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/js.js"></script>
+    <script src="assets/js/gostei.js"></script>
 </body>

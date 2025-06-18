@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/css.css">
     <title>DISNEY+</title>
 </head>
+
 <body>
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
@@ -18,51 +20,184 @@
     <script>
         new window.VLibras.Widget('https://vlibras.gov.br/app');
     </script>
-    
+
     <div class="header">
         <div class="logo">
             <img src="assets/img/logodisney.png" alt="">
         </div>
         <nav class="navbar">
             <ul class="nav-links">
-                <li class="nav-link"><a href="index.html" class="ativo" role="button"> <p>Inicio</p></a></li>
-                <li class="nav-link"><a href="sobre.html" role="button"><p>Sobre</p></a></li>
-                <li class="nav-link"><a href="tiana.html" role="button"><p>Projeto</p></a></li>
+                <li class="nav-link"><a href="index.html" class="ativo" role="button">
+                        <p>Inicio</p>
+                    </a></li>
+                <li class="nav-link"><a href="sobre.html" role="button">
+                        <p>Sobre</p>
+                    </a></li>
             </ul>
-            <a  class="link-formulario" id="link-formulario" href="./tela cadastro/index.html" role="button" >Entre ou Cadastre-se<i class='bx bxs-user'></i></a>
+            <a class="link-formulario" id="link-formulario" href="./tela cadastro/index.html" role="button">Entre ou
+                Cadastre-se<i class='bx bxs-user'></i></a>
         </nav>
     </div>
 
     <div class="apresentacao">
+        <div class="background-apresentacao">
+            <video src="assets/img/video fundo.mp4" autoplay loop muted></video>
+        </div>
         <div class="apresentacao-content">
             <h3>Seja muito bem vindo à </h3>
             <h1>DISNEY +</h1>
             <h3>Apresentado por <span class="multiple-text"></span></h3>
             <p>As melhores histórias em um só lugar.</p>
-                <div class="social-media">
-                 <a href="#"><i class='bx bxl-facebook'></i></a>
-                 <a href="#"><i class='bx bxl-twitter'></i></a>
-                 <a href="#"><i class='bx bxl-instagram-alt'></i></a>
-                 <a href="#"><i class='bx bxl-linkedin'></i></a>
-                </div>
-            <a href="index2.html" class="btn">Conhecer</a>
+            <a href="sobre.html" class="btn">Conhecer</a>
         </div>
+    </div>
 
+    <div class="filmes">
+        <div class="titulo-filmes">
+            <h2>Explore <span>Grandes Aventuras!</span></h2>
+            <p>Conheça alguns dos filmes que marcaram minha vida e encantaram gerações ao redor do mundo.
+            </p>
+        </div>
+        <div class="cards-filmes">
+            <div class="card-filmes">
+                <img src="assets/img/capa-tiana.jpeg" alt="A Princesa e o Sapo">
+                <h3>A Princesa e o Sapo</h3>
+                <p>Em meio ao charme de Nova Orleans, Tiana sonha em abrir seu próprio restaurante. Mas tudo muda quando
+                    ela beija um príncipe que foi transformado em sapo, e acaba entrando em uma jornada mágica de
+                    coragem, amor e autodescoberta.</p>
+            </div>
+            <div class="card-filmes">
+                <img src="assets/img/moana-sobre.jpeg" alt="Moana">
+                <h3>Moana</h3>
+                <p>Moana, filha do chefe de uma ilha polinésia, sente o chamado do oceano. Determinada a salvar seu
+                    povo, ela embarca em uma jornada corajosa ao lado do semideus Maui, desafiando o mar e descobrindo
+                    quem realmente é.</p>
+            </div>
+            <div class="card-filmes">
+                <img src="assets/img/alice.jpg" alt="Alice no País das Maravilhas">
+                <h3>Alice no País das Maravilhas</h3>
+                <p>Alice segue um coelho apressado e cai em um mundo fantástico cheio de criaturas excêntricas, enigmas
+                    e reinos malucos. Uma história de descobertas e imaginação onde nada é o que parece.</p>
+            </div>
+            <div class="card-filmes">
+                <img src="assets/img/fundo-piratas.jpeg" alt="Piratas do Caribe">
+                <h3>Piratas do Caribe</h3>
+                <p>O lendário Capitão Jack Sparrow enfrenta perigos sobrenaturais, maldições antigas e alianças
+                    traiçoeiras em aventuras pelos sete mares, sempre com sua bússola misteriosa e um plano (ou quase
+                    isso) em mente.</p>
+            </div>
+            <div class="card-filmes">
+                <img src="assets/img/rio.JPG" alt="Rio">
+                <h3>Rio</h3>
+                <p>Blu, uma arara azul domesticada, viaja ao Brasil e vive uma aventura vibrante no Rio de Janeiro. Ao
+                    lado de novas amizades e de uma arara selvagem chamada Jade, ele descobre o que significa ser livre.
+                </p>
+            </div>
+            <div class="card-filmes">
+                <img src="assets/img/carros.jpeg" alt="Carros">
+                <h3>Carros</h3>
+                <p>Relâmpago McQueen, um carro de corrida vaidoso, aprende lições valiosas sobre amizade e humildade
+                    quando se vê preso em uma cidade esquecida na Rota 66. Uma corrida pelo coração, não apenas pela
+                    vitória.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="calculadora-filmes">
+        <h2>Você é fã de verdade? Descubra agora!</h2>
+        <p>Digite quantos dos 6 filmes apresentados você já assistiu:</p>
+        <input type="number" id="qtdFilmes" min="0" max="6" placeholder="0 a 6">
+        <button onclick="calcular()" class="btn">Ver Resultado</button>
+        <div id="div_mensagem"></div>
     </div>
 
 
-    
+    <div class="apresentar-recomendacao">
+        <div class="recomendacao">
+            <h2>#MyDisney</h2>
+        </div>
+        <div class="banner-recomendacao">
+            <div class="banner-txt">
+                <h1>Sua Próxima Aventura Começa Aqui!</h1>
+                <p>Cadastre-se e descubra qual história encantada combina com você.</p>
+                <a href="tela cadastro/index.html" class="btn">Entre ou
+                    Cadastre-se</a>
+            </div>
+            <div class="banner-img">
+                <img src="assets/img/logodisney.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="rodape">
+        <div class="logo-rodape">
+            <img src="assets/img/logodisney.png" alt="">
+        </div>
+        <div class="menu-rodape">
+            <center>
+                <ul class="links-rodape">
+                    <li class="link-rodape"><a href="index.html" class="ativo" role="button">
+                            <p>Inicio</p>
+                        </a></li>
+                    <li class="link-rodape"><a href="./dashboard/quiz/quiz.html" class="ativo" role="button">
+                            <p>Sobre</p>
+                        </a></li>
+                    <li class="link-rodape"><a href="index.html" class="ativo" role="button">
+                            <p>Cadastro</p>
+                        </a></li>
+                    <li class="link-rodape"><a href="./dashboard/quiz/quiz.html" class="ativo" role="button">
+                            <p>Login</p>
+                        </a></li>
+                </ul>
+            </center>
+            <div class="social-media">
+                <a href="https://github.com/Thaisgms"><i class='bx bxl-github'></i></a>
+                <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="#"><i class='bx bxl-linkedin'></i></a>
+            </div>
+        </div>
+    </div>
 </body>
 <script>
-  const header = document.querySelector('.header');
+    const header = document.querySelector('.header');
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 10) {
-      header.classList.add('blur');
-    } else {
-      header.classList.remove('blur');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 10) {
+            header.classList.add('blur');
+        } else {
+            header.classList.remove('blur');
+        }
+    });
+
+    function calcular() {
+        const qtd = document.getElementById("qtdFilmes").value;
+        const resultado = document.getElementById("div_mensagem");
+
+        if (qtd < 0 || qtd > 6) {
+            resultado.innerHTML = "Por favor, digite um número entre 0 e 6.";
+            return;
+        }
+
+        const pontosPorFilme = 20;
+        const pontuacaoTotal = qtd * pontosPorFilme;
+        let mensagem = `Você assistiu ${qtd} filme(s), totalizando ${pontuacaoTotal} pontos.<br>`;
+
+        if (qtd <= 2) {
+            mensagem += " Você ainda tem muitas aventuras para viver!";
+            resultado.style.color = "#ff4c4c";
+        } else if (qtd <= 4) {
+            mensagem += " Você está no caminho certo!";
+            resultado.style.color = "#ffc107";
+        } else if (qtd === 5) {
+            mensagem += " Você está quase no topo!";
+            resultado.style.color = "#a3c07f";
+        } else if (qtd === 6) {
+            mensagem += " Um verdadeiro fã da Disney!";
+            resultado.style.color = "#0cc0df";
+        }
+        resultado.innerHTML = mensagem;
     }
-  });
 </script>
 <script src="assets/js/script.js"></script>
+
 </html>

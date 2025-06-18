@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./dashboards.css">
+    <link rel="stylesheet" href="./estilo.css" />
+
+    <!-- scripts do Chart.js - 2022-1 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!--FONT AWESOME-->
+    <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
+</head>
+
+<!-- <body onload=" atualizarFeed()"> -->
+
+<body onload="obterDadosGrafico()">
+
+    <div class="janela">
+        <div class="header-left">
+            <h1>MyDisney</h1>
+
+            <div class="btn-nav">
+                <h3>Gráficos</h3>
+            </div>
+            <div class="btn-logout" onclick="limparSessao()">
+                <h3>Sair</h3>
+            </div>
+        </div>
+
+        <div class="conteudosKPI">
+            <div id="conteudoKPI" class="areaNumero">
+                <h3>Quantidade de usuários:</h3>
+                <span id="valorKPI">0</span>
+                <span class="subtituloUsuario">Usuários</span>
+            </div>
+            <div id="conteudoKPI" class="areaNumero">
+                <h3>Usuários satisfeitos com a recomendação:</h3>
+                <span id="valorKPI2"></span>
+                <span class="subtituloUsuario">%</span>
+            </div>
+            <div id="conteudoKPI" class="areaNumero">
+                <h3>Filme mais indicado:</h3>
+                <span id="valorKPI3"></span>
+                <span class="subtituloUsuario"></span>
+            </div>
+        </div>
+
+        <div class="container-graficos">
+            <div class="chart-container">
+                <h2>Quantidade de indicação por filme</h2>
+                <canvas id="pie"></canvas>
+            </div>
+            <div class="chart-container1">
+                <h2>Gêneros mais populares</h2>
+                <canvas id="myChart3"></canvas>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+
+    function obterDadosGrafico() {
+
+        fetch(`/dados/buscar`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                    plotarGrafico(resposta);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+        fetch(`/dados/buscarPizza`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                    plotarGraficoPizza(resposta);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+        fetch(`/dados/kpi1`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                    exibir(resposta);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+        fetch(`/dados/kpi2`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta2) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta2)}`);
+
+                    exibir1(resposta2);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+        fetch(`/dados/kpi3`, { cache: 'no-store',method: "GET",headers:{"Content-type" : "application/json"} }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta3) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta3)}`);
+
+                    exibir2(resposta3);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+
+    function plotarGrafico(resposta) {
+
+        console.log('iniciando plotagem do gráfico...');
+
+        // Criando estrutura para plotar gráfico - labels
+        let labels = [];
+
+        // Criando estrutura para plotar gráfico - dados
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'Filmes',
+                data: [],
+                fill: false,
+                borderColor: ['#a3c07f', '#1E90FF', '#556B2F', '#0cc0df', '#DC143C', '#ffff77'],
+                backgroundColor: ['#a3c07f', '#1E90FF', '#556B2F', '#0cc0df', '#DC143C', '#ffff77'],
+                tension: 0.1
+            }]
+        };
+
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(resposta)
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels.push(registro['nome_filme']);
+            dados.datasets[0].data.push(registro['total_indicacoes']);
+        }
+
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'bar',
+            data: dados,
+        };
+
+        // Adicionando gráfico criado em div na tela
+        let myChart = new Chart(
+            document.getElementById(`pie`),
+            config
+        );
+
+    }
+
+    function plotarGraficoPizza(resposta) {
+
+        console.log('iniciando plotagem do gráfico...');
+
+        // Criando estrutura para plotar gráfico - labels
+        let labels = [];
+
+        // Criando estrutura para plotar gráfico - dados
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'Filmes',
+                data: [],
+                fill: false,
+                borderColor: ['#a3c07f', '#1E90FF', '#556B2F', '#0cc0df', '#DC143C', '#ffff77'],
+                backgroundColor: ['#a3c07f', '#1E90FF', '#556B2F', '#0cc0df', '#DC143C', '#ffff77'],
+                tension: 0.1
+            }]
+        };
+
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(resposta)
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels.push(registro['genero']);
+            dados.datasets[0].data.push(registro['total_usuarios']);
+        }
+
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'pie',
+            data: dados,
+        };
+
+        // Adicionando gráfico criado em div na tela
+        let myChart = new Chart(
+            document.getElementById(`myChart3`),
+            config
+        );
+    }
+
+    function limparSessao() {
+        window.location.href = '../../index.html';
+    }
+
+    function exibir(resposta) {
+        document.getElementById('valorKPI').innerHTML = Number(resposta[0]['total_usuarios'])
+    }
+
+    function exibir1(resposta2) {
+        document.getElementById('valorKPI2').innerHTML = Number(resposta2[0]['porcentagem_usuarios_que_indicaram'])
+    }
+
+        function exibir2(resposta3) {
+        document.getElementById('valorKPI3').innerHTML = resposta3[0]['nome_filme']
+    }
+
+</script>

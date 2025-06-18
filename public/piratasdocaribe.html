@@ -1,184 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="assets/css/piratasdocaribe.css">
-    <title>DISNEY+</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="assets/css/piratasdocaribe.css">
+  <title>DISNEY+</title>
 </head>
+
 <body>
-    <div vw class="enabled">
-        <div vw-access-button class="active"></div>
-        <div vw-plugin-wrapper>
-            <div class="vw-plugin-top-wrapper"></div>
-        </div>
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
     </div>
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+
+  <div class="header">
+    <div class="logo">
+      <img src="assets/img/logodisney.png" alt="">
+    </div>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li class="nav-link"><a href="index.html" class="ativo" role="button">
+            <p>Sair da conta</p>
+          </a></li>
+      </ul>
+      <a class="link-formulario" id="link-formulario" href="./dashboard/quiz/quiz.html" role="button">Refazer Quiz <i
+          class='bx  bx-rotate-ccw'></i></a>
+    </nav>
+  </div>
+
+  <div class="apresentacao">
+    <div class="background">
+      <div class="divtext">
+        <div class="inside-divtext">
+          <span>Direção: Gore Verbinski</span>
+          <h1>Piratas do Caribe</h1>
+          <p>29 de ago. de 2003 · 2h23min · Ação, Aventura, Fantasia</p>
+          <h2>O filme "Piratas do Caribe: A Maldição do Pérola Negra" apresenta o excêntrico capitão Jack Sparrow,
+            interpretado por Johnny Depp, que busca recuperar seu navio, o Pérola Negra, e salvar a filha do governador,
+            Elizabeth Swann, levada por um grupo de piratas. A trama se desenrola em uma série de eventos que envolvem
+            maldições, tesouros e a busca pela liberdade dos piratas. O filme é conhecido por sua mistura de aventura,
+            fantasia e comédia, e é baseado em uma das atrações do parque da Disney.</h2>
+          <div class="bnt1">
+            <a href=""><i class="fas fa-play"></i></a>
+            <a href=""><i class="fas fa-heart"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="poster">
+        <img src="assets/img/piratasdocaribe.jpeg">
+      </div>
+    </div>
+  </div>
+
+  <div class="recomendacoes">
+    <div class="recomendacao">
+      <div class="txt-recomendacao">
+        <h1>Por que <span>Piratas do Caribe</span> é um filme que você precisa ver?</h1>
+        <center>
+          <p>Uma jornada épica repleta de aventuras, personagens inesquecíveis e muita emoção.</p>
+        </center>
+      </div>
+
+      <div class="cards-recomendacao">
+        <div class="cards-img">
+          <img src="assets/img/caveira.png" alt="">
+        </div>
+
+        <div class="cards-coluna">
+          <div class="card-recomendacao">
+            <h2>Para quem ama ação, aventura e mistério</h2>
+            <p>Piratas do Caribe é uma saga eletrizante, cheia de batalhas épicas, caças a tesouros e mistérios
+              sobrenaturais. Ideal para quem busca emoção do começo ao fim, com cenários incríveis e histórias de tirar
+              o fôlego.</p>
+          </div>
+          <div class="card-recomendacao">
+            <h2>Para quem quer conhecer personagens carismáticos e inesquecíveis</h2>
+            <p>O Capitão Jack Sparrow se tornou um ícone do cinema: irreverente, corajoso e imprevisível. Ao lado de
+              outros personagens marcantes, ele torna cada filme uma experiência única, cheia de humor e reviravoltas.
+            </p>
+          </div>
+          <div class="card-recomendacao">
+            <h2>Para quem gosta de histórias sobre liberdade e coragem</h2>
+            <p>Mais do que aventuras em alto-mar, a saga fala sobre buscar a liberdade a qualquer custo, lutar por seus
+              ideais e enfrentar desafios com bravura. Uma inspiração para quem acredita no poder da coragem e da
+              amizade.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordions">
+      <div class="titulo-accordion">
+        <br>
+        <h2>Curiosidades sobre o <span>filme</span></h2>
+      </div>
+      <div class="container">
+        <div class="accordion">
+          <button class="accordion-header">
+            <span>O Capitão Jack Sparrow (um ícone do cinema)</span>
+            <i class='bx bx-plus-medical arrow'></i>
+          </button>
+          <div class="accordion-body">
+            <p>Interpretado brilhantemente por Johnny Depp, Jack Sparrow é um dos personagens mais carismáticos e
+              imprevisíveis do cinema. Sua mistura de humor, astúcia e coragem conquistou fãs no mundo inteiro,
+              tornando-se o grande símbolo da franquia.</p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="accordion">
+          <button class="accordion-header">
+            <span>Baseado em uma atração clássica da Disney</span>
+            <i class='bx bx-plus-medical arrow'></i>
+          </button>
+          <div class="accordion-body">
+            <p>Você sabia que “Piratas do Caribe” nasceu como uma atração dos parques da Disney? O sucesso foi tão
+              grande que inspirou a criação de uma das maiores franquias cinematográficas, misturando aventura, fantasia
+              e mistério em alto-mar.</p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="accordion">
+          <button class="accordion-header">
+            <span>Cenas de ação espetaculares e efeitos visuais impressionantes</span>
+            <i class='bx bx-plus-medical arrow'></i>
+          </button>
+          <div class="accordion-body">
+            <p>O filme é conhecido por suas batalhas navais épicas, duelos de espadas eletrizantes e efeitos visuais
+              revolucionários, como o temido Davy Jones e<br> seu navio fantasma. Cada cena é uma verdadeira obra-prima
+              que prende a atenção do começo ao fim.</p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="accordion">
+          <button class="accordion-header">
+            <span>Uma trilha sonora inesquecível</span>
+            <i class='bx bx-plus-medical arrow'></i>
+          </button>
+          <div class="accordion-body">
+            <p>Composta por Hans Zimmer, a trilha sonora de “Piratas do Caribe” é uma das mais marcantes da história do
+              cinema. As músicas adicionam ainda mais emoção às cenas de aventura e são imediatamente reconhecíveis por
+              fãs de todas as idades.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="personagens">
+      <div class="titulo-personagens">
+        <h2>Conheça os <span>Personagens</span></h2>
+        <p>Os encantadores personagens que dão vida à história de Jack sparrow e sua jornada.</p>
+      </div>
+      <div class="cards-personagens">
+        <div class="card-personagem">
+          <img src="assets/img/piratas-1.png" alt="">
+          <h3>Jack Sparrow</h3>
+          <p>Um pirata astuto e imprevisível, conhecido por sua esperteza, carisma e jeito único de escapar de
+            encrencas.</p>
+        </div>
+        <div class="card-personagem">
+          <img src="assets/img/piratas-3.png" alt="">
+          <h3>Elizabeth Swann</h3>
+          <p>Filha do governador que se torna uma pirata corajosa, determinada a lutar por justiça e liberdade nos
+            mares.</p>
+        </div>
+        <div class="card-personagem">
+          <img src="assets/img/piratas-2.png" alt="">
+          <h3>William Turner</h3>
+          <p>Um ferreiro habilidoso e leal, que se envolve em aventuras perigosas para salvar aqueles que ama.</p>
+        </div>
+        <div class="card-personagem">
+          <img src="assets/img/piratas-4.png" alt="">
+          <h3>Hector Barbossa</h3>
+          <p>Um temido capitão pirata, rival e às vezes aliado de Jack Sparrow, sempre em busca de tesouros e poder.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="feedback">
+      <h1>Gostaría de saber o que <span>você achou</span> da recomendação:</h1>
+      <a onclick="gostei(sessionStorage.ID_FILME)" class="link-gostei" role="button">Gostei <i class='bx  bx-heart'></i>
+      </a>
+    </div>
+
+    <div class="rodape">
+      <div class="logo-rodape">
+        <img src="assets/img/logodisney.png" alt="">
+      </div>
+      <div class="menu-rodape">
+        <center>
+          <ul class="links-rodape">
+            <li class="link-rodape"><a href="index.html" class="ativo" role="button">
+                <p>Sair da Conta</p>
+              </a></li>
+            <li class="link-rodape"><a href="./dashboard/quiz/quiz.html" class="ativo" role="button">
+                <p>Refazer Quiz</p>
+              </a></li>
+          </ul>
+        </center>
+        <div class="social-media">
+          <a href="https://github.com/Thaisgms"><i class='bx bxl-github'></i></a>
+          <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+          <a href="#"><i class='bx bxl-linkedin'></i></a>
+        </div>
+      </div>
+    </div>
+
+
     <script>
-        new window.VLibras.Widget('https://vlibras.gov.br/app');
+      const header = document.querySelector('.header');
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 10) {
+          header.classList.add('blur');
+        } else {
+          header.classList.remove('blur');
+        }
+      });
     </script>
+    <script src="assets/js/js.js"></script>
+    <script src="assets/js/gostei.js"></script>
 
-    <div class="header">
-        <div class="logo">
-            <img src="assets/img/logodisney.png" alt="">
-        </div>
-        <nav class="navbar">
-            <ul class="nav-links">
-                <li class="nav-link"><a href="index.html" role="button"><p>Inicio</p></a></li>
-                <li class="nav-link"><a href="sobre.html" role="button"><p>Sobre</p></a></li>
-                <li class="nav-link"><a href="tiana.html" class="ativo" role="button"><p>Projeto</p></a></li>
-            </ul>
-            <a  class="link-formulario" id="link-formulario" href="tela cadastro/index.html" role="button" >MyDisney<i class='bx bxs-user'></i></a>
-        </nav>
-    </div>
-    
-    <div class="apresentacao">
-        <div class="background">
-            <div class="divtext">
-                <div class="inside-divtext">
-                    <span>Direção: Gore Verbinski</span>
-                    <h1>Piratas do Caribe</h1>
-                    <p>29 de ago. de 2003 · 2h23min ·  Ação, Aventura, Fantasia</p>
-                    <h2>Em pleno século XVII, o pirata Jack Sparrow (Johnny Depp) tem seu navio saqueado e roubado pelo capitão Barbossa (Geoffrey Rush) e sua tripulação. Com o navio de Sparrow, Barbossa invade e saqueia a cidade de Port Royal, levando consigo Elizabeth Swann (Keira Knightley), a filha do governador (Jonathan Pryce). Decidido a recuperar sua embarcação, Sparrow recebe a ajuda de Will Turner (Orlando Bloom), um grande amigo de Elizabeth que parte em seu encalço.</h2>
-                    <div class="bnt1">
-                        <a href=""><i class="fas fa-play"></i></a>
-                        <a href=""><i class="fas fa-heart"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="poster">
-                <img src="assets/img/piratasdocaribe.jpg">
-            </div>
-        </div>
-    </div>
-
-<div class="recomendacoes">
-  <div class="recomendacao">
-    <div class="txt-recomendacao">
-      <h1>curiosidades sobre a <span>história</span></h1>
-      <center>
-        <p>Uma história mágica cheia de curiosidades e inspiração.</p>
-      </center>
-    </div>
-
-    <div class="cards-recomendacao">
-      <div class="cards-img">
-        <img src="assets/img/caveira.png" alt="">
-      </div>
-
-      <div class="cards-coluna">
-        <div class="card-recomendacao">
-          <i class='bxr bx-sparkles-alt'></i>
-          <h2>A Primeira princesa negra da Disney</h2>
-          <p>Tiana é a primeira princesa negra da história da Disney, o que foi um marco importantíssimo para a representatividade nos desenhos animados. Ela quebrou padrões e trouxe diversidade ao grupo das princesas, inspirando meninas do mundo todo.</p>
-        </div>
-        <div class="card-recomendacao">
-          <i class='bxr bx-sparkles-alt'></i>
-          <h2>Uma princesa com um sonho realista</h2>
-          <p>Tiana não sonha com um príncipe ou castelo. Ela quer abrir seu próprio restaurante, um objetivo real, baseado em trabalho duro, esforço e paixão pela culinária. Isso torna a personagem mais próxima da realidade e muito inspiradora.</p>
-        </div>
-        <div class="card-recomendacao">
-          <i class='bxr bx-sparkles-alt'></i>
-          <h2>Uma história de amor construída com base no respeito</h2>
-          <p>Diferente de muitos contos de fadas onde o amor acontece "à primeira vista", Tiana e Naveen aprendem um com o outro, amadurecem juntos e constroem um relacionamento verdadeiro ao longo da jornada.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="accordions">
-    <div class="titulo-accordion">
-      <br><h2>Curiosidades sobre a <span>história</span></h2>
-    </div>
-    <div class="container">
-        <div class="accordion">
-            <button class="accordion-header">
-                <span>O filme é baseado em um brinquedo da Disney</span>
-                <i class='bx bx-plus-medical arrow'></i>
-            </button>
-            <div class="accordion-body">
-                <p>Ao contrário de muitas atrações dos parques da Disney, que são baseados em filmes de sucesso, o brinquedo serviu como inspiração primordial para o filme.</p>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="accordion">
-            <button class="accordion-header">
-                <span>Pirata de verdade</span>
-                <i class='bx bx-plus-medical arrow'></i>
-            </button>
-            <div class="accordion-body">
-                <p>A franquia Piratas do caribe sempre brincou muito de viajar pela fantasia e culminar em acontecimentos históricos na época dos piratas.</p>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="accordion">
-            <button class="accordion-header">
-                <span>O longa-metragem mais caro de todos os tempos</span>
-                <i class='bx bx-plus-medical arrow'></i>
-            </button>
-            <div class="accordion-body">
-              <p>“No Fim do Mundo”, terceiro filme da franquia, é considerado o longa-metragem mais caro de todos os tempos. Os custos ultrapassaram os $ 300 milhões de dólares.</p>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="accordion">
-            <button class="accordion-header">
-                <span>Ambientado em Nova Orleans, com muito jazz!</span>
-                <i class='bx bx-plus-medical arrow'></i>
-            </button>
-            <div class="accordion-body">
-              <p>O filme se passa em Nova Orleans nos anos 1920, uma época vibrante em que o jazz estava em alta. A trilha sonora é contagiante, cheia de ritmos <br>típicos  da cultura local como jazz, blues e zydeco, tornando o clima do filme totalmente envolvente e diferente de outros contos de fadas.</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="personagens">
-  <div class="titulo-personagens">
-    <h2>Conheça os <span>Personagens</span></h2>
-    <p>Os encantadores personagens que dão vida à história de Jack sparrow e sua jornada.</p>
-  </div>
-  <div class="cards-personagens">
-    <div class="card-personagem">
-        <img src="assets/img/piratas-1.png" alt="">
-        <h3>Jack sparrow</h3>
-        <p>A protagonista determinada que sonha em abrir seu próprio restaurante e acaba vivendo uma aventura mágica.</p>
-    </div>
-    <div class="card-personagem">
-        <img src="assets/img/piratas-3.png" alt="">
-        <h3>Elizabeth Swann</h3>
-        <p>Um príncipe carismático que aprende sobre responsabilidade e amor verdadeiro ao lado de Tiana.</p>
-    </div>
-    <div class="card-personagem">
-        <img src="assets/img/piratas-2.png" alt="">
-        <h3>William Turner</h3>
-        <p>O vilão da história, um feiticeiro sombrio conhecido como o "Homem das Sombras".</p>
-    </div>
-    <div class="card-personagem">
-        <img src="assets/img/piratas-4.png" alt="">
-        <h3>Hector Barbossa</h3>
-        <p>Um jacaré adorável que ama jazz e sonha em tocar trompete em uma banda humana.</p>
-    </div>
-  </div>
-</div>
-
-
-
-<script>
-  const header = document.querySelector('.header');
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 10) {
-      header.classList.add('blur');
-    } else {
-      header.classList.remove('blur');
-    }
-  });
-</script>
-<script src="assets/js/js.js"></script>
 </body>

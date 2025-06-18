@@ -73,7 +73,7 @@ body{
     border-color: #fff;
 }
 
-.container form{
+.container .form{
     background-color: #fff;
     display: flex;
     align-items: center;
@@ -83,28 +83,28 @@ body{
     height: 90%;
 }
 
-.container form img {
+.container .form img {
     margin-left: -220px;
 }
 
-.container form .patrocinio {
+.container .form .patrocinio {
     margin: 0;
     margin-top: 20px;
 }
 
-.container form .titulo-entrar {
+.container .form .titulo-entrar {
     margin-left: -20px;
     margin-bottom: 20px;
 }
 
-.container form .titulo-criar {
+.container .form .titulo-criar {
     margin-left: -200px;
     margin-bottom: 20px;
 }
 
 .container input{
-    background-color: #eee;
     border: none;
+    background-color: rgba(0, 0, 0, 0.067);
     margin: 8px 0;
     padding: 10px 15px;
     font-size: 13px;

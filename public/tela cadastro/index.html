@@ -15,7 +15,7 @@
   </div>
   <div class="container" id="container">
     <div class="form-container criar">
-      <form>
+      <div class="form">
         <img src="assets/imgs/mydisney.png" alt="" height="40px">
         <h1 class="titulo-entrar">Criar uma conta</h1>
         <span>Crie sua conta e conheça o mundo mágico da Disney!</span>
@@ -23,18 +23,18 @@
         <input id="input_email" type="email" placeholder="Email">
         <input id="input_senha" type="password" placeholder="Senha">
         <button onclick="cadastrar()">Cadastrar</button>
-      </form>
+      </div>
     </div>
     <div class="form-container entrar">
-      <form>
+      <div class="form">
         <img src="assets/imgs/mydisney.png" alt="" height="40px">
         <h1 class="titulo-criar">Entrar</h1>
         <span>Sua história mágica continua aqui. Faça login para viver mais um capítulo!</span>
         <input id="input_email_login" type="email" placeholder="Email">
         <input id="input_senha_login" type="password" placeholder="Senha">
         <input id="input_confirmar" type="password" placeholder="Confirmar Senha">
-      </form>
-      <button onclick="entrar()">Entrar</button> 
+        <button onclick="entrar()">Entrar</button>
+      </div>
     </div>
     <div class="alternativa-container">
       <div class="alternativa">
@@ -68,7 +68,7 @@
     container.classList.remove("active");
   });
 
- function cadastrar() {
+  function cadastrar() {
     // aguardar();
 
     //Recupere o valor da nova input pelo nome do id
@@ -76,6 +76,16 @@
     var nomeVar = input_nome.value;
     var emailVar = input_email.value;
     var senhaVar = input_senha.value;
+
+    if (nomeVar === "" || emailVar === "" || senhaVar === "") {
+      alert("Por favor, preencha todos os campos.");
+      return false;
+    }
+
+    if (senhaVar.length < 6) {
+      alert("A senha deve conter no mínimo 6 caracteres.");
+      return false;
+    }
 
     // Verificando se há algum campo em branco
     // if (
@@ -111,84 +121,104 @@
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-          cardErro.style.display = "block";
+          alert("Cadastro realizado com sucesso!");
 
-          mensagem_erro.innerHTML =
-            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+          container.classList.remove("active");
 
-          limparFormulario();
-          finalizarAguardar();
+          input_nome.value = "";
+          input_email.value = "";
+          input_senha.value = "";
         } else {
-          throw "Houve um erro ao tentar realizar o cadastro!";
+          alert("Houve um erro ao tentar realizar o cadastro.");
         }
       })
+
       .catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
+        // finalizarAguardar();
       });
 
     return false;
   }
 
-   function entrar() {
-        // aguardar();
+  function entrar() {
+    // aguardar();
 
-        var emailVar = input_email_login.value;
-        var senhaVar = input_senha_login.value;
+    var emailVar = input_email_login.value;
+    var senhaVar = input_senha_login.value;
+    var confirmarSenhaVar = input_confirmar.value;
 
-        // if (emailVar == "" || senhaVar == "") {
-        //     cardErro.style.display = "block"
-        //     mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-        //     finalizarAguardar();
-        //     return false;
-        // }
-        // else {
-        //     setInterval(sumirMensagem, 5000)
-        // }
-
-        console.log("FORM LOGIN: ", emailVar);
-        console.log("FORM SENHA: ", senhaVar);
-
-        fetch("/usuarios/autenticar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                emailServer: emailVar,
-                senhaServer: senhaVar
-            })
-        }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
-
-            if (resposta.ok) {
-                console.log(resposta);
-
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
-                    setTimeout(function () {
-                      window.location = "../dashboard/quiz/quiz.html";
-                    }, 1000);
-                });
-            } else {
-
-                console.log("Houve um erro ao tentar realizar o login!");
-
-                // resposta.text().then(texto => {
-                //     console.error(texto);
-                //     finalizarAguardar(texto);
-                // });
-            }
-
-        }).catch(function (erro) {
-            console.log(erro);
-        })
-
-        return false;
+    if (emailVar === "" || senhaVar === "" || confirmarSenhaVar === "") {
+      alert("Por favor, preencha todos os campos.");
+      return false;
     }
+
+    if (senhaVar !== confirmarSenhaVar) {
+      alert("A senha e a confirmação de senha não coincidem.");
+      return false;
+    }
+
+    // if (emailVar == "" || senhaVar == "") {
+    //     cardErro.style.display = "block"
+    //     mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+    //     finalizarAguardar();
+    //     return false;
+    // }
+    // else {
+    //     setInterval(sumirMensagem, 5000)
+    // }
+
+    console.log("FORM LOGIN: ", emailVar);
+    console.log("FORM SENHA: ", senhaVar);
+
+    fetch("/usuarios/autenticar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        emailServer: emailVar,
+        senhaServer: senhaVar
+      })
+    }).then(function (resposta) {
+      console.log("ESTOU NO THEN DO entrar()!")
+
+      if (resposta.ok) {
+        console.log(resposta);
+
+        resposta.json().then(json => {
+          console.log(json);
+          console.log(JSON.stringify(json));
+          sessionStorage.EMAIL_USUARIO = json.email;
+          sessionStorage.NOME_USUARIO = json.nome;
+          sessionStorage.ID_USUARIO = json.id;
+
+          if (emailVar == 'thais@email.com' && senhaVar == '1234') {
+            setTimeout(function () {
+              window.location = "../dashboard/dashboard/dashboard.html";
+            }, 1000);
+
+          } else {
+            setTimeout(function () {
+              window.location = "../apresentacao-quiz.html";
+            }, 1000);
+          }
+        });
+      } else {
+
+        console.log("Houve um erro ao tentar realizar o login!");
+
+        // resposta.text().then(texto => {
+        //     console.error(texto);
+        //     finalizarAguardar(texto);
+        // });
+      }
+
+    }).catch(function (erro) {
+      console.log(erro);
+    })
+
+    return false;
+  }
 
 </script>

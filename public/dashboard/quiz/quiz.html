@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz de Interesse - Filmes da Disney</title>
   <link rel="stylesheet" href="assets/css/css.css">
 </head>
+
 <body>
   <div vw class="enabled">
-      <div vw-access-button class="active"></div>
-      <div vw-plugin-wrapper>
-        <div class="vw-plugin-top-wrapper"></div>
-      </div>
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
   </div>
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>
-        new window.VLibras.Widget('https://vlibras.gov.br/app');
-    </script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+
   <div class="quiz-container">
     <img src="assets/img/mydisney.png" alt="">
     <h2>Descubra qual filme recomendo para você!</h2>
@@ -29,148 +32,222 @@
   </div>
 
   <script>
-    // Variáveis e vetores
-    const quizData = [
-      { 
-    // Objetos
-    question: "Qual tipo de aventura você prefere?", 
-      options: [  { text: "Aventuras em um pântano ", value: 'tiana' },
-                  { text: "Explorar Oceanos e ilhas", value: 'moana'},
-                  { text: "Um universo de criaturas incríveis e cenários surpreendentes", value: 'alice' },
-                  { text: "Batalha em alto mar", value: 'piratas' },
-                  { text: "elementos da natureza - fogo, água, terra e ar ", value: 'elementos' },
-                  { text: "Corridas ambicioso", value: 'carros' },
-                  { text: "Celebração vibrante da diversidade cultural ", value: 'rio' } ] },
+    const quizPersonalidade = [
+      {
+        question: "Qual estilo de filme você mais gosta?",
+        options: [{ text: "Romance", value: 'tiana' },
+        { text: "Aventura", value: 'moana' },
+        { text: "Fantasia", value: 'alice' },
+        { text: "Ação", value: 'piratas' },
+        { text: "Animação", value: 'carros' },
+        { text: "Comédia", value: 'rio' },]
+      },
 
-      { question: "Qual estilo de filme você mais gosta?",
-      options: [  { text: "Romance", value: 'tiana' },
-                  { text: "Aventura", value: 'moana' },
-                  { text: "Fantasia", value: 'alice' }, 
-                  { text: "Ação", value: 'piratas' },
-                  { text: "Comédia romantica", value: 'elementos' },
-                  { text: "Animação", value: 'carros' },
-                  { text: "Comédia", value: 'rio' }, ] },
+      {
+        question: "Qual tipo de aventura você prefere?",
+        options: [{ text: "Aventuras em um pântano ", value: 'tiana' },
+        { text: "Explorar Oceanos e ilhas", value: 'moana' },
+        { text: "Um universo surpreendentes com criaturas incríveis", value: 'alice' },
+        { text: "Navios piratas e batalhas em alto-mar", value: 'piratas' },
+        { text: "Ritmo acelerado e cheio de energia", value: 'carros' },
+        { text: "Celebração vibrante da diversidade cultural ", value: 'rio' }]
+      },
 
-      { question: "Qual ritmo de história você prefere?",
-      options: [  { text: "Diálogos cheios de emoção e evolução de um amor ao longo do tempo", value: 'tiana' },
-                  { text: "Sequências de ação e passeio constante", value: 'moana' },
-                  { text: "Mundo fantástico que evolui aos poucos", value: 'alice' }, 
-                  { text: "Piadas e perseguições intensas", value: 'piratas' }, 
-                  { text: "Caminhos que unem o humor e o amor", value: 'elementos' }, 
-                  { text: "Ação intensa do início ao fim", value: 'carros' }, 
-                  { text: "Peripécias inesperadas em cenários emocionantes", value: 'rio' } ] },
+      {
+        question: "Qual ritmo de história você prefere?",
+        options: [{ text: "Diálogos cheios de emoção e evolução de um amor", value: 'tiana' },
+        { text: "Sequências de ação e passeio constante", value: 'moana' },
+        { text: "Mundo fantástico que evolui aos poucos", value: 'alice' },
+        { text: "Piadas e perseguições intensas", value: 'piratas' },
+        { text: "Ação intensa do início ao fim", value: 'carros' },
+        { text: "Peripécias inesperadas em cenários emocionantes", value: 'rio' }]
+      },
 
-      { question: "O que te faz voltar a assistir um filme?",
-      options: [  { text: "Diálogos cheios de emoção e evolução de um amor ao longo do tempo", value: 'tiana' },
-                  { text: "Sequências de ação e passeio constante", value: 'moana' },
-                  { text: "Mundo fantástico que evolui aos poucos", value: 'alice' }, 
-                  { text: "Piadas e perseguições intensas", value: 'piratas' }, 
-                  { text: "Caminhos que unem o humor e o amor", value: 'elementos' }, 
-                  { text: "Ação intensa do início ao fim", value: 'carros' }, 
-                  { text: "Peripécias inesperadas em cenários emocionantes", value: 'rio' } ] },
-                  
-      { question: "Você prefere tramas que:",
-      options: [  { text: "Diálogos cheios de emoção e evolução de um amor ao longo do tempo", value: 'tiana' },
-                  { text: "Sequências de ação e passeio constante", value: 'moana' },
-                  { text: "Mundo fantástico que evolui aos poucos", value: 'alice' }, 
-                  { text: "Piadas e perseguições intensas", value: 'piratas' }, 
-                  { text: "Caminhos que unem o humor e o amor", value: 'elementos' }, 
-                  { text: "Ação intensa do início ao fim", value: 'carros' }, 
-                  { text: "Peripécias inesperadas em cenários emocionantes", value: 'rio' } ] }
-    ];
+      {
+        question: "Quem seria seu parceiro ideal de aventura?",
+        options: [{ text: "Um sapo charmoso com um segredo mágico", value: 'tiana' },
+        { text: "Um galo atrapalhado", value: 'moana' },
+        { text: "Um coelho apressado", value: 'alice' },
+        { text: "Um pirata com moral duvidosa ", value: 'piratas' },
+        { text: "Um carro com muita atitude", value: 'carros' },
+        { text: "Uma arara falante", value: 'rio' }]
+      },
+
+      {
+        question: "Você se envolve mais com histórias que...",
+        options: [{ text: "Falam sobre amor, sonhos e superação", value: 'tiana' },
+        { text: "Exploram jornadas épicas com propósito", value: 'moana' },
+        { text: "Te transportam para universos surreais", value: 'alice' },
+        { text: "Misturam comédia e aventura sem parar", value: 'piratas' },
+        { text: "São movidas por competição e superação", value: 'carros' },
+        { text: "Têm humor, música e muita energia positiva", value: 'rio' }]
+      },
+      {
+        question: "Qual dessas motivações mais combina com você?",
+        options: [
+          { text: "Realizar um grande sonho pessoal", value: 'tiana' },
+          { text: "Descobrir quem você realmente é", value: 'moana' },
+          { text: "Explorar o inesperado e o desconhecido", value: 'alice' },
+          { text: "Buscar liberdade e viver sem regras", value: 'piratas' },
+          { text: "Provar seu valor em desafios", value: 'carros' },
+          { text: "Aproveitar a vida com diversão e amigos", value: 'rio' }]
+      },
+      {
+        question: "Qual desses desafios você enfrentaria com mais coragem?",
+        options: [
+          { text: "Romper barreiras para conquistar um sonho", value: 'tiana' },
+          { text: "Enfrentar perigos em uma ilha desconhecida", value: 'moana' },
+          { text: "Entrar em um mundo mágico cheio de surpresas", value: 'alice' },
+          { text: "Encarar inimigos em uma batalha no mar", value: 'piratas' },
+          { text: "Participar de uma corrida cheia de obstáculos", value: 'carros' },
+          { text: "Se aventurar por uma cidade vibrante com novos amigos", value: 'rio' }]
+      }];
 
     let PerguntaMostrada = 0;
-    //objeto que guarda a pontuação acumulada para cada filme
-    const scores = { tiana: 0, moana: 0, alice: 0, piratas: 0, elementos: 0, carros: 0, rio: 0 };
-    // referências aos elementos do HTML para manipulação
-    const quizEl = document.getElementById('quiz');
+    const pontuacao_filme = { tiana: 0, moana: 0, alice: 0, piratas: 0, carros: 0, rio: 0 };
+
+    const quiz = document.getElementById('quiz');
     const ProximaPergunta = document.getElementById('ProximaPergunta');
-    const resultadoEl = document.getElementById('resultado');
+    const resultado = document.getElementById('resultado');
     const ProgressoBar = document.getElementById('ProgressoBar');
 
-    // Função para carregar a pergunta atual
-    function loadQuestion(index) {
-      const questionObj = quizData[index];
-      let html = `<div class="question">${questionObj.question}</div><ul class="options">`;
+    function Pergunta_atual() {
+      const pergunta = quizPersonalidade[PerguntaMostrada];
+      let mensagem = `<div class="question">${pergunta.question}</div><ul class="options">`;
 
-      // Loop para gerar opções
-      for (let i = 0; i < questionObj.options.length; i++) {
-        const opt = questionObj.options[i];
-        html += `<li><label><input type="radio" name="option" value="${opt.value}"> ${opt.text}</label></li>`;
+      for (let i = 0; i < pergunta.options.length; i++) {
+        const opcao = pergunta.options[i];
+        mensagem += `<li><label><input type="radio" name="option" value="${opcao.value}"> ${opcao.text}</label></li>`;
       }
 
-      // Atualiza o texto do botão: se for a última pergunta, muda para "Finalizar"
-      html += '</ul>';
-      quizEl.innerHTML = html;
-      ProximaPergunta.textContent = (index === quizData.length - 1) ? 'Finalizar' : 'Próxima';
-      updateProgresso();
-    }
+      mensagem += '</ul>';
+      quiz.innerHTML = mensagem;
 
-    // Função para atualizar barra de Progressoo
-    function updateProgresso() {
-      const percent = ((PerguntaMostrada) / quizData.length) * 100;
-      ProgressoBar.style.width = `${percent}%`;
-    }
-
-    // Função para processar resposta e avançar
-    function handleNext() {
-      const selecionada  = document.querySelector('input[name="option"]:checked');
-      // Condicional
-      if (!selecionada ) {
-         alert('Você ainda não selecionou nenhuma opção! Por favor, selecione uma para prosseguir.'); return; 
-      }
-      scores[selecionada .value]++; //Se selecionou, aumenta a pontuação da categoria correspondente.
-      PerguntaMostrada++; // Incrementa o índice para ir para a próxima pergunta.
-      if (PerguntaMostrada < quizData.length) {
-        loadQuestion(PerguntaMostrada); //Se ainda há perguntas, carrega a próxima.
+      if (PerguntaMostrada === quizPersonalidade.length - 1) {
+        ProximaPergunta.textContent = 'Finalizar';
       } else {
-        showresultado(); //Caso contrário, chama a função para mostrar o resultado.
+        ProximaPergunta.textContent = 'Próxima';
+      }
+      atualizarProgresso();
+    }
+
+    function atualizarProgresso() {
+      const Progresso = (PerguntaMostrada / quizPersonalidade.length) * 100;
+      ProgressoBar.style.width = `${Progresso}%`;
+    }
+
+    function processar_avancar() {
+      const respostaEscolhida = document.querySelector('input[name="option"]:checked');
+
+      if (!respostaEscolhida) {
+        alert('Você ainda não selecionou nenhuma opção! Por favor, selecione uma para prosseguir.');
+        return;
+      }
+
+      var usuario = sessionStorage.ID_USUARIO;
+
+      if (PerguntaMostrada === 0) {
+        var filme_atual = respostaEscolhida.value;
+        if (filme_atual === 'tiana') {
+          filme_atual = 1;
+        } else if (filme_atual === 'moana') {
+          filme_atual = 2;
+        } else if (filme_atual === 'alice') {
+          filme_atual = 3;
+        } else if (filme_atual === 'piratas') {
+          filme_atual = 4;
+        } else if (filme_atual === 'carros') {
+          filme_atual = 5;
+        } else if (filme_atual === 'rio') {
+          filme_atual = 6;
+        }
+
+        fetch("/quiz/cadastrar", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            filme_atualServer: filme_atual,
+            usuarioServer: usuario
+          }),
+        })
+          .then(function (resposta) {
+            console.log("resposta: ", resposta);
+          })
+          .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+          });
+      }
+
+      pontuacao_filme[respostaEscolhida.value]++;
+      PerguntaMostrada++;
+
+      if (PerguntaMostrada < quizPersonalidade.length) {
+        Pergunta_atual();
+      } else {
+        resultado_final();
       }
     }
 
-    // Função para mostrar o resultadoado final
-    function showresultado() {
-      ProgressoBar.style.width = `100%`; //Completa a barra de progresso.
-      ProximaPergunta.style.display = 'none'; //Esconde o botão "Próxima".
-      let maxScore = -1, theme = '';
+    function resultado_final() {
+      ProgressoBar.style.width = `100%`;
+      ProximaPergunta.style.display = 'none';
 
-      for (const key in scores) { //Percorre o objeto scores para descobrir qual categoria tem maior pontuação.
-          if (scores[key] > maxScore) { maxScore = scores[key]; theme = key; }
+      let maiorPontuacao = -1;
+      let temasEmpate = [];
+      const temas = Object.keys(pontuacao_filme);
+
+      for (let i = 0; i < temas.length; i++) {
+        const tema = temas[i];
+        if (pontuacao_filme[tema] > maiorPontuacao) {
+          maiorPontuacao = pontuacao_filme[tema];
+        }
       }
 
-      // Redirecionar para páginas de resultadoado (Condicional)
-      switch(theme) {
+      for (let i = 0; i < temas.length; i++) {
+        const tema = temas[i];
+        if (pontuacao_filme[tema] === maiorPontuacao) {
+          temasEmpate.push(tema);
+        }
+      }
+
+      const temaVencedor = temasEmpate[Math.floor(Math.random() * temasEmpate.length)];
+
+      switch (temaVencedor) {
         case 'tiana':
+          sessionStorage.ID_FILME = 1;
           window.location.href = '../../tiana.html';
           break;
         case 'moana':
-          window.location.href = 'moana.html';
+          sessionStorage.ID_FILME = 2;
+          window.location.href = '../../moana.html';
           break;
         case 'alice':
-          window.location.href = 'alice.html';
+          sessionStorage.ID_FILME = 3;
+          window.location.href = '../../alice.html';
           break;
         case 'piratas':
-          window.location.href = 'piratas.html';
-          break;
-        case 'elementos':
-          window.location.href = 'elementos.html';
+          sessionStorage.ID_FILME = 4;
+          window.location.href = '../../piratasdocaribe.html';
           break;
         case 'carros':
-          window.location.href = 'carros.html';
+          sessionStorage.ID_FILME = 5;
+          window.location.href = '../../carros.html';
           break;
         case 'rio':
-          window.location.href = 'rio.html';
+          sessionStorage.ID_FILME = 6;
+          window.location.href = '../../rio.html';
           break;
         default:
           window.location.href = 'index.html';
       }
     }
 
-    // Evento de clique
-    ProximaPergunta.addEventListener('click', handleNext);
+    ProximaPergunta.addEventListener('click', processar_avancar);
 
-    // Inicialização
-    loadQuestion(PerguntaMostrada);
+    Pergunta_atual();
   </script>
 </body>
+
 </html>

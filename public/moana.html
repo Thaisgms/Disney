@@ -1,189 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="assets/css/moana.css">
-    <title>DISNEY+</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="assets/css/moana.css">
+  <title>DISNEY+</title>
 </head>
+
 <body>
-    <div vw class="enabled">
-        <div vw-access-button class="active"></div>
-        <div vw-plugin-wrapper>
-            <div class="vw-plugin-top-wrapper"></div>
-        </div>
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
     </div>
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>
-        new window.VLibras.Widget('https://vlibras.gov.br/app');
-    </script>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
 
-    <div class="header">
-        <div class="logo">
-            <img src="assets/img/logodisney.png" alt="">
-        </div>
-        <nav class="navbar">
-            <ul class="nav-links">
-                <li class="nav-link"><a href="index.html" role="button"><p>Inicio</p></a></li>
-                <li class="nav-link"><a href="sobre.html" role="button"><p>Sobre</p></a></li>
-                <li class="nav-link"><a href="tiana.html" class="ativo" role="button"><p>Projeto</p></a></li>
-            </ul>
-            <a  class="link-formulario" id="link-formulario" href="tela cadastro/index.html" role="button" >MyDisney<i class='bx bxs-user'></i></a>
-        </nav>
+  <div class="header">
+    <div class="logo">
+      <img src="assets/img/logodisney.png" alt="">
     </div>
-    
-    <div class="apresentacao">
-        <div class="background">
-            <div class="divtext">
-                <div class="inside-divtext">
-                    <span>Direção: John Musker, Ron Clements</span>
-                    <h1>Moana - Um Mar de Aventuras</h1>
-                    <p>05 de jan. de 2017 · 1h 47min · Animação, Família</p>
-                    <h2>Moana, filha do chefe de Motunui, sente-se chamada pelo mar. Ao descobrir que a escuridão ameaça sua ilha, ela parte em uma missão para encontrar o semideus Maui e devolver o coração roubado de Te Fiti. Juntos, enfrentam perigos e restauram a harmonia, salvando seu povo.</h2>
-                    <div class="bnt1">
-                        <a href=""><i class="fas fa-play"></i></a>
-                        <a href=""><i class="fas fa-heart"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="poster">
-                <img src="assets/img/moana.jpeg">
-            </div>
-        </div>
-    </div>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li class="nav-link"><a href="index.html" class="ativo" role="button">
+            <p>Sair da conta</p>
+          </a></li>
+      </ul>
+      <a class="link-formulario" id="link-formulario" href="./dashboard/quiz/quiz.html" role="button">Refazer Quiz <i
+          class='bx  bx-rotate-ccw'></i></a>
+    </nav>
+  </div>
 
-<div class="recomendacoes">
-  <div class="recomendacao">
-    <div class="txt-recomendacao">
-      <h1>curiosidades sobre a <span>história</span></h1>
-      <center>
-        <p>Uma história mágica cheia de curiosidades e inspiração.</p>
-      </center>
+  <div class="apresentacao">
+    <div class="background">
+      <div class="divtext">
+        <div class="inside-divtext">
+          <span>Direção: John Musker, Ron Clements</span>
+          <h1>Moana - Um Mar de Aventuras</h1>
+          <p>05 de jan. de 2017 · 1h 47min · Animação, Família</p>
+          <h2>Moana, filha do chefe de Motunui, sente-se chamada pelo mar. Ao descobrir que a escuridão ameaça sua ilha,
+            ela parte em uma missão para encontrar o semideus Maui e devolver o coração roubado de Te Fiti. Juntos,
+            enfrentam perigos e restauram a harmonia, salvando seu povo.</h2>
+          <div class="bnt1">
+            <a href=""><i class="fas fa-play"></i></a>
+            <a href=""><i class="fas fa-heart"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="poster">
+        <img src="assets/img/moana.jpeg">
+      </div>
     </div>
+  </div>
 
-    <div class="cards-recomendacao">
-      <div class="cards-img">
-        <img src="assets/img/moana-apresentação.png" alt="">
+  <div class="recomendacoes">
+    <div class="recomendacao">
+      <div class="txt-recomendacao">
+        <h1>Por que <span>Moana</span> é um filme que você precisa ver?</h1>
+        <center>
+          <p>Uma história de coragem, autoconhecimento e conexão com a natureza.</p>
+        </center>
       </div>
 
-      <div class="cards-coluna">
-        <div class="card-recomendacao">
-          <i class='bxr bx-sparkles-alt'></i>
-          <h2>A Primeira princesa negra da Disney</h2>
-          <p>Tiana é a primeira princesa negra da história da Disney, o que foi um marco importantíssimo para a representatividade nos desenhos animados. Ela quebrou padrões e trouxe diversidade ao grupo das princesas, inspirando meninas do mundo todo.</p>
+      <div class="cards-recomendacao">
+        <div class="cards-img">
+          <img src="assets/img/moana-apresentação.png" alt="">
         </div>
-        <div class="card-recomendacao">
-          <i class='bxr bx-sparkles-alt'></i>
-          <h2>Uma princesa com um sonho realista</h2>
-          <p>Tiana não sonha com um príncipe ou castelo. Ela quer abrir seu próprio restaurante, um objetivo real, baseado em trabalho duro, esforço e paixão pela culinária. Isso torna a personagem mais próxima da realidade e muito inspiradora.</p>
-        </div>
-        <div class="card-recomendacao">
-          <i class='bxr bx-sparkles-alt'></i>
-          <h2>Uma história de amor construída com base no respeito</h2>
-          <p>Diferente de muitos contos de fadas onde o amor acontece "à primeira vista", Tiana e Naveen aprendem um com o outro, amadurecem juntos e constroem um relacionamento verdadeiro ao longo da jornada.</p>
+
+        <div class="cards-coluna">
+          <div class="card-recomendacao">
+            <h2>Para quem ama histórias de superação e coragem</h2>
+            <p>Moana é uma jovem destemida que desafia os limites da sua ilha e enfrenta o desconhecido em busca de
+              salvar seu povo. Sua jornada é inspiradora e prova que a verdadeira coragem nasce da determinação e do
+              amor pelo que acreditamos.</p>
+          </div>
+          <div class="card-recomendacao">
+            <h2>Para quem valoriza cultura, tradição e identidade</h2>
+            <p>O filme é um tributo emocionante à cultura polinésia, mostrando a importância de honrar as raízes,
+              preservar tradições e, ao mesmo tempo, buscar novos caminhos. Moana ensina que conhecer quem somos é a
+              chave para conquistar nosso futuro.</p>
+          </div>
+          <div class="card-recomendacao">
+            <h2>Para quem busca uma protagonista forte e inspiradora</h2>
+            <p>Moana não espera ser salva, ela é a heroína da sua própria história. Com força, inteligência e compaixão,
+              ela quebra estereótipos e inspira todos que acreditam no poder da liderança feminina e na capacidade de
+              mudar o mundo.</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="accordions">
+  <div class="accordions">
     <div class="titulo-accordion">
-      <br><h2>Curiosidades sobre a <span>história</span></h2>
+      <br>
+      <h2>Curiosidades sobre o <span>filme</span></h2>
     </div>
     <div class="container">
-        <div class="accordion">
-            <button class="accordion-header">
-                <span>Inovação</span>
-                <i class='bx bx-plus-medical arrow'></i>
-            </button>
-            <div class="accordion-body">
-                <p>Moana é a primeira princesa polinésia da Disney, e a primeira navegadora do estúdio</p>
-            </div>
+      <div class="accordion">
+        <button class="accordion-header">
+          <span>Inovação</span>
+          <i class='bx bx-plus-medical arrow'></i>
+        </button>
+        <div class="accordion-body">
+          <p>Moana é a primeira princesa polinésia da Disney, e a primeira navegadora do estúdio</p>
         </div>
+      </div>
     </div>
     <div class="container">
-        <div class="accordion">
-            <button class="accordion-header">
-                <span>História original</span>
-                <i class='bx bx-plus-medical arrow'></i>
-            </button>
-            <div class="accordion-body">
-                <p>Ao contrário das demais princesas, a trajetória de Moana não se inspira em um conto de fadas. Ela é a segunda princesa da Disney com uma narrativa completamente inédita. Outro aspecto que une essas duas personagens é a ausência de um interesse romântico ao longo de suas histórias.</p>
-            </div>
+      <div class="accordion">
+        <button class="accordion-header">
+          <span>História original</span>
+          <i class='bx bx-plus-medical arrow'></i>
+        </button>
+        <div class="accordion-body">
+          <p>Ao contrário das demais princesas, a trajetória de Moana não se inspira em um conto de fadas. Ela é a
+            segunda princesa da Disney com uma narrativa completamente inédita. Outro aspecto que une essas duas
+            personagens é a ausência de um interesse romântico ao longo de suas histórias.</p>
         </div>
+      </div>
     </div>
     <div class="container">
-        <div class="accordion">
-            <button class="accordion-header">
-                <span> Cultura Polinésia </span>
-                <i class='bx bx-plus-medical arrow'></i>
-            </button>
-            <div class="accordion-body">
-              <p>John Musker e Ron Clements, os diretores da animação, queriam retratar a cultura polinésia de forma respeitosa. Por isso, eles viajaram até as ilhas Fiji, Samoa e Taiti para fazer intensas pesquisas sobre as tradições e costumes dessa cultura. </p>
-            </div>
+      <div class="accordion">
+        <button class="accordion-header">
+          <span> Cultura Polinésia </span>
+          <i class='bx bx-plus-medical arrow'></i>
+        </button>
+        <div class="accordion-body">
+          <p>John Musker e Ron Clements, os diretores da animação, queriam retratar a cultura polinésia de forma
+            respeitosa. Por isso, eles viajaram até as ilhas<br> Fiji, Samoa e Taiti para fazer intensas pesquisas sobre
+            as tradições e costumes dessa cultura. </p>
         </div>
+      </div>
     </div>
     <div class="container">
-        <div class="accordion">
-            <button class="accordion-header">
-                <span>Céu realista</span>
-                <i class='bx bx-plus-medical arrow'></i>
-            </button>
-            <div class="accordion-body">
-              <p> Para deixar o filme bem fiel, astrônomos fizeram pesquisas para descobrir como o céu nas noites das ilhas do Pacífico eram há 2000 anos!</p>
-            </div>
+      <div class="accordion">
+        <button class="accordion-header">
+          <span>Céu realista</span>
+          <i class='bx bx-plus-medical arrow'></i>
+        </button>
+        <div class="accordion-body">
+          <p> Para deixar o filme bem fiel, astrônomos fizeram pesquisas para descobrir como o céu nas noites das ilhas
+            do Pacífico eram há 2000 anos!</p>
         </div>
-    </div>
-</div>
-
-<div class="personagens">
-  <div class="titulo-personagens">
-    <h2>Conheça os <span>Personagens</span></h2>
-    <p>Os encantadores personagens que dão vida à história de Moana e sua jornada.</p>
-  </div>
-  <div class="cards-personagens">
-    <div class="card-personagem">
-        <img src="assets/img/Design sem nome (9).png" alt="">
-        <h3>Moana</h3>
-        <p>Uma jovem corajosa e determinada que sonha em explorar o oceano e ajudar sua ilha.</p>
-    </div>
-    <div class="card-personagem">
-        <img src="assets/img/1.jpg" alt="">
-        <h3>Maui</h3>
-        <p>Um semideus poderoso e brincalhão, conhecido por sua força e por seu anzol mágico.</p>
-    </div>
-    <div class="card-personagem">
-        <img src="assets/img/3.jpg" alt="">
-        <h3>Heihei</h3>
-        <p>Um galo atrapalhado e engraçado, que acaba acompanhando Moana em sua aventura pelo oceano.</p>
-    </div>
-    <div class="card-personagem">
-        <img src="assets/img/2.jpg" alt="">
-        <h3>Tamatoa</h3>
-        <p>Um caranguejo gigante e vaidoso que vive no reino das trevas e adora colecionar objetos brilhantes.</p>
-    </div>
-    <div class="card-personagem">
-        <img src="assets/img/4.jpg" alt="">
-        <h3>Pua</h3>
-        <p>O porquinho de estimação de Moana, fofo e companheiro, embora fique na ilha quando ela parte para sua jornada.</p>
+      </div>
     </div>
   </div>
-</div>
 
+  <div class="personagens">
+    <div class="titulo-personagens">
+      <h2>Conheça os <span>Personagens</span></h2>
+      <p>Os encantadores personagens que dão vida à história de Moana e sua jornada.</p>
+    </div>
 
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="assets/img/Design sem nome (9).png" alt="">
+          <h3>Moana</h3>
+          <p>Uma jovem corajosa e determinada que sonha em explorar o oceano e ajudar sua ilha.</p>
+        </div>
+        <div class="swiper-slide"> <img src="assets/img/1.jpg" alt="">
+          <h3>Maui</h3>
+          <p>Um semideus poderoso e brincalhão, conhecido por sua força e por seu anzol mágico.</p>
+        </div>
+        <div class="swiper-slide"> <img src="assets/img/3.jpg" alt="">
+          <h3>Heihei</h3>
+          <p>Um galo atrapalhado e engraçado, que acaba acompanhando Moana em sua aventura pelo oceano.</p>
+        </div>
 
-<script>
-  const header = document.querySelector('.header');
+        <div class="swiper-slide"> <img src="assets/img/2.jpg" alt="">
+          <h3>Vovó Tala</h3>
+          <p>A avó de Moana, divertida e sábia, que acredita na conexão com o oceano e inspira Moana a seguir seu
+            destino.</p>
+        </div>
+        <div class="swiper-slide"> <img src="assets/img/4.jpg" alt="">
+          <h3>Pua</h3>
+          <p>O porquinho de estimação de Moana, fofo e companheiro, embora fique na ilha quando ela parte para sua
+            jornada.</p>
+        </div>
+        <div class="swiper-slide"> <img src="assets/img/coco.png" alt="">
+          <h3>Kakamora</h3>
+          <p>Esses piratas selvagens em formato de coco parecem inofensivos. Mas vão criar problemas para Moana e Maui
+            durante a jornada marítima.</p>
+        </div>
+        <div class="swiper-slide"> <img src="assets/img/planta.png" alt="">
+          <h3>Te Fiti</h3>
+          <p>A Deusa Te fiti é responsável por toda a criação das ilhas, ela teve o seu coração roubado.</p>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 10) {
-      header.classList.add('blur');
-    } else {
-      header.classList.remove('blur');
-    }
-  });
-</script>
-<script src="assets/js/js.js"></script>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+    </div>
+
+    <div class="feedback">
+      <h1>Gostaría de saber o que <span>você achou</span> da recomendação:</h1>
+      <a onclick="gostei(sessionStorage.ID_FILME)" class="link-gostei" role="button">Gostei <i class='bx  bx-heart'></i>
+      </a>
+    </div>
+
+    <div class="rodape">
+      <div class="logo-rodape">
+        <img src="assets/img/logodisney.png" alt="">
+      </div>
+      <div class="menu-rodape">
+        <center>
+          <ul class="links-rodape">
+            <li class="link-rodape"><a href="index.html" class="ativo" role="button">
+                <p>Sair da Conta</p>
+              </a></li>
+            <li class="link-rodape"><a href="./dashboard/quiz/quiz.html" class="ativo" role="button">
+                <p>Refazer Quiz</p>
+              </a></li>
+          </ul>
+        </center>
+        <div class="social-media">
+          <a href="https://github.com/Thaisgms"><i class='bx bxl-github'></i></a>
+          <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+          <a href="#"><i class='bx bxl-linkedin'></i></a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const header = document.querySelector('.header');
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 10) {
+          header.classList.add('blur');
+        } else {
+          header.classList.remove('blur');
+        }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/js.js"></script>
+    <script src="assets/js/gostei.js"></script>
+
 </body>

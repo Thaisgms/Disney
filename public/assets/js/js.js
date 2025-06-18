@@ -7,31 +7,28 @@ accordions.forEach(accordion => {
     })
 })
 
-const swiper = new Swiper('.personagens', {
+var swiper = new Swiper(".swiper", {
     loop: true,
     grabCursor: true,
-    spaceBetween: 30,
-
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-        dynamicBullets: true
-    },
-
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
     },
-
     breakpoints: {
-        0: {
-            slidesPerView: 1,
+        640: {
+            slidesPerView: 2,
+            spaceBetween: 18
         },
         768: {
-            slidesPerView: 2,
-        },
-        1024: {
             slidesPerView: 3,
+            spaceBetween: 18
         },
+        1188: {
+            slidesPerView: 4,
+            spaceBetween: 40
+        }
+    },
+    autoplay: {
+        delay: 4000,
     },
 });
