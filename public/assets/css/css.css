@@ -160,14 +160,22 @@ body {
 }
 
 .apresentacao-content {
-  max-width: 800px;
+  max-width: 1000px;
   position: relative;
   z-index: 1;
   padding: 70px 120px 50px;
 }
 
+.apresentacao-content h4 {
+  font-size: 46px;
+}
+
 .apresentacao-content h3 {
-  font-size: 42px;
+  font-size: 33px;
+}
+
+.apresentacao-content span {
+  color: #0cc0df;
 }
 
 .apresentacao-content h1 {
@@ -176,7 +184,7 @@ body {
 }
 
 .apresentacao-content p {
-  font-size: 24px;
+  font-size: 26px;
   margin-top: 2%;
 }
 
